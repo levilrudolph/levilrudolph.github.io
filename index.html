@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/green-ink-design-system-4f2d41e5-9017-499e-916b-37adfc6d71dd/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/green-ink-design-system-4f2d41e5-9017-499e-916b-37adfc6d71dd/tokens/colors.css">
+<script src="_ds/green-ink-design-system-4f2d41e5-9017-499e-916b-37adfc6d71dd/_ds_bundle.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#F4EFE1;color:#16362A;font-family:'Newsreader',Georgia,'Times New Roman',serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--accent,#B3782C);color:#F4EFE1}
+  a{color:inherit}
+  html[data-armed] [data-io]{opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+  html[data-armed] [data-io][data-shown]{opacity:1;transform:none}
+  [data-rm="1"] *{animation-play-state:paused!important}
+  .om-proj:hover .om-projbar{width:100%!important}
+  .om-proj:hover .om-arrow{transform:translateX(6px)!important;color:var(--accent,#B3782C)!important}
+  .om-proj:hover .om-ptitle{color:var(--accent,#B3782C)!important}
+  .om-cta:hover{background:#16362A!important;color:#F4EFE1!important;border-color:#16362A!important}
+  .om-cta:hover .om-arrow{color:#F4EFE1!important;transform:translateY(6px)!important}
+  .om-soc:hover{background:#16362A!important;color:#F4EFE1!important;border-color:#16362A!important}
+  image-slot{display:block!important;width:100%!important;height:100%!important}
+  .om-cube canvas{display:block}
+  .om-cube{contain:strict}
+  .om-mail:hover{color:var(--accent,#B3782C)!important}
+  .om-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+  .om-card:hover{transform:translate(-2px,-2px);border-color:#16362A;box-shadow:4px 4px 0 #B3782C}
+  .om-card:hover .om-ptitle{color:var(--accent,#B3782C)!important}
+  .om-card:hover .om-cardcue,.om-card:hover .om-cardcue span{color:var(--accent,#B3782C)!important}
+  .om-card:hover .om-cardcue span{transform:translateX(5px)!important}
+  .om-clipwrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,2.6vw,38px)}
+  @media (max-width:1040px){.om-clipwrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:620px){.om-clipwrap{grid-template-columns:minmax(0,1fr)}}
+  .om-clip{display:block;break-inside:avoid;-webkit-column-break-inside:avoid;text-decoration:none;color:inherit;border-top:3px solid #16362A;padding:14px 0 26px;margin:0;transition:opacity .3s}
+  .om-clip:hover .om-ptitle{color:var(--accent,#B3782C)!important}
+  .om-clip:hover .om-cardcue,.om-clip:hover .om-cardcue span{color:var(--accent,#B3782C)!important}
+  .om-clip:hover .om-cardcue span{transform:translateX(5px)!important}
+  .om-clip:hover .om-clipfig{box-shadow:4px 4px 0 #B3782C}
+  .om-clipfig{transition:box-shadow .3s}
+  .om-lead2:hover .om-ptitle{color:var(--accent,#B3782C)!important}
+  .om-lead2:hover .om-cardcue span{transform:translateX(6px)!important;color:var(--accent,#B3782C)!important}
+  .om-lead2:hover .om-clipfig{box-shadow:5px 5px 0 #B3782C}
+  @media (max-width:700px){.om-leadbody{grid-template-columns:1fr!important}}
+  .om-dir{column-count:3;column-gap:clamp(28px,3vw,44px);column-rule:1px solid rgba(22,54,42,.22)}
+  @media (max-width:900px){.om-dir{column-count:2}}
+  @media (max-width:560px){.om-dir{column-count:1}}
+  .om-dircat{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 26px;border-top:3px solid #16362A;box-shadow:0 3px 0 #16362A;padding-top:13px}
+  .om-dirrow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)}
+  .om-detail{position:fixed;inset:0;z-index:70;background:#F4EFE1;opacity:0;visibility:hidden;content-visibility:hidden;contain-intrinsic-size:100vw 100vh;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1),visibility .5s;overflow-y:auto;overscroll-behavior:contain}
+  .om-detail:target{opacity:1;visibility:visible;content-visibility:visible;transform:none}
+  body:has(.om-detail:target){overflow:hidden}
+  .om-close:hover{color:var(--accent,#B3782C)!important;border-color:var(--accent,#B3782C)!important}
+  .om-back:hover{color:var(--accent,#B3782C)!important}
+  section[data-screen-label]{scroll-margin-top:74px}
+  .om-navlink{transition:color .25s}
+  .om-navlink:hover{color:var(--accent,#B3782C)!important}
+  .om-resumebtn:hover{background:var(--accent,#B3782C)!important;color:#F4EFE1!important}
+  @media (max-width:820px){.om-navlinks{display:none!important}
+    .om-aboutgrid{grid-template-columns:1fr!important}
+    .om-aboutgrid figure{max-width:260px}
+    .om-frontgrid{grid-template-columns:1fr!important;gap:34px!important}
+    .om-idx{border-right:0!important;padding-right:0!important;border-top:1px solid rgba(22,54,42,.22);padding-top:22px}
+    .om-particulars{border-left:0!important;padding-left:0!important;border-top:1px solid rgba(22,54,42,.22);padding-top:22px}
+    .om-lead{order:-1}
+    .om-leadcase{grid-template-columns:1fr!important}
+    .om-leadcase .om-leadwell{border-right:0!important;border-bottom:1px solid #16362A!important}}
+  @media (max-width:640px){
+    .om-aboutbody{column-count:1!important}
+    .om-rec{grid-template-columns:1fr!important;gap:20px!important}
+    .om-recmeta{flex-direction:row!important;flex-wrap:wrap;align-items:center;gap:18px!important}
+    .om-recmeta > div:last-child{border-top:0!important;padding-top:0!important}
+    .om-folio{font-size:9px!important;letter-spacing:.12em!important;gap:.5rem!important}
+  }
+  .om-idxrow:hover span:first-child{color:#16362A!important}
+  .om-idxrow:hover span:last-child{color:#B3782C!important}
+  @keyframes om-scrollbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+  a{color:#245A40;text-decoration-color:rgba(179,120,44,.5)}
+  a:hover{color:#16362A}
+  h1,h2,h3{color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0}
+  [style*="uppercase"]{font-family:'Fraunces',serif}
+  .om-cta:hover h2{color:#F4EFE1!important}
+  .om-btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 #B3782C}
+  .om-btn-primary:hover{background:#16362A!important;border-color:#16362A!important}
+  .om-grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E")}
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;background:#F4EFE1">
+  
+
+  <!-- ===================== FOLIO ===================== -->
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(24px,5vw,72px)">
+    <div class="om-folio" style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding:.7rem 0;margin-top:.7rem;border-top:1px solid #16362A;border-bottom:1px solid #16362A;font-family:'Fraunces',serif;font-size:clamp(9.5px,.85vw,11px);font-weight:500;letter-spacing:.22em;text-transform:uppercase">
+      <span>The Rudolph Record</span>
+      <span style="color:#6E7E6C;letter-spacing:.26em;text-align:center;white-space:nowrap">A Mechanical Engineering Portfolio</span>
+      <span style="text-align:right">Vol. I · No. 1</span>
+    </div>
+    <nav style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,2vw,30px);padding:.75rem 0;border-bottom:1px solid rgba(22,54,42,.22);font-family:'Fraunces',serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase">
+      <a class="om-navlink" href="#about" style="text-decoration:none;color:rgba(22,54,42,.62)">About</a>
+      <a class="om-navlink" href="#work" style="text-decoration:none;color:rgba(22,54,42,.62)">Selected Works</a>
+      <a class="om-navlink" href="#experience" style="text-decoration:none;color:rgba(22,54,42,.62)">Experience</a>
+      <a class="om-navlink" href="#press" style="text-decoration:none;color:rgba(22,54,42,.62)">In the News</a>
+      <a class="om-navlink" href="#toolkit" style="text-decoration:none;color:rgba(22,54,42,.62)">The Particulars</a>
+      <a class="om-navlink" href="#contact" style="text-decoration:none;color:#B3782C">Correspondence</a>
+    </nav>
+  </div>
+
+  <!-- ===================== MASTHEAD + LEAD STORY ===================== -->
+  
+
+  <!-- ===================== ABOUT ===================== -->
+  <header style="text-align:center;padding:clamp(28px,4vw,48px) 0 clamp(20px,3vw,30px)">
+        <div style="font-family:'Fraunces',serif;font-size:clamp(11px,1.1vw,13px);font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:#16362A;margin-bottom:.35em;padding-left:.5em">The Rudolph</div>
+        <div style="position:relative;display:inline-block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(64px,13vw,172px);line-height:.84;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 30,'WONK' 1">
+          <span aria-hidden="true" style="position: absolute; left: 3px; top: 5px; color: #B3782C; opacity: .32">Record</span><span style="position:relative">Record</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.8em;margin-top:1.1rem;font-family:'Fraunces',serif;font-size:clamp(10.5px,1.05vw,13px);font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#6E7E6C">
+          <span>Mechanical Engineering Portfolio</span><span style="color:#B3782C">✦</span><span>Madison, Wisconsin</span>
+        </div>
+        <hr style="border:0;height:0;border-top:3px solid #16362A;box-shadow:0 3px 0 #16362A;margin:clamp(20px,2.5vw,28px) 0 0">
+      </header><section data-screen-label="Front Page" id="top" style="padding:0 clamp(24px,5vw,72px) clamp(44px,5vw,68px);border-bottom:3px solid #16362A">
+    <div style="max-width:1240px;margin:0 auto">
+
+      <!-- Masthead nameplate -->
+      
+
+      <!-- Front page -->
+      <div class="om-frontgrid" style="display:grid;grid-template-columns:minmax(0,188px) minmax(0,1fr) minmax(0,248px);gap:clamp(26px,3.2vw,46px);align-items:start;padding:clamp(26px,4vw,42px) 0 0">
+
+        <!-- Index rail -->
+        <aside class="om-idx" style="border-right:1px solid rgba(22,54,42,.22);padding-right:clamp(18px,2vw,28px)">
+          <div style="font-family:'Fraunces',serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#16362A;padding-bottom:11px;border-bottom:3px solid #16362A;margin-bottom:4px">Inside This Edition</div>
+          <nav style="display:flex;flex-direction:column">
+            <a href="#about" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">The Engineer</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">2</span></a>
+            <a href="#work" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">Selected Works</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">3</span></a>
+            <a href="#experience" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">The Record</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">6</span></a>
+            <a href="#press" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">In the News</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">8</span></a>
+            <a href="#toolkit" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">The Toolbox</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">9</span></a>
+            <a href="#awards" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">Honours</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">10</span></a>
+            <a href="#contact" class="om-idxrow" style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;padding:10px 0;border-bottom:1px dotted rgba(22,54,42,.32)"><span style="font-family:'Newsreader',serif;font-size:14.5px;color:#245A40;transition:color .25s">Correspondence</span><span style="font-family:'Fraunces',serif;font-size:12px;color:#6E7E6C;transition:color .25s">12</span></a>
+          </nav>
+          <div style="margin-top:22px;background:#E9DFC8;border:1px solid #16362A;padding:15px 15px 17px;box-shadow:4px 4px 0 #B3782C">
+            <div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3782C">Notice</div>
+            <div style="font-family:'Fraunces',serif;font-weight:500;font-size:16.5px;line-height:1.16;color:#16362A;margin-top:7px">Now accepting Summer 2026 internships.</div>
+          </div>
+        </aside>
+
+        <!-- Lead story -->
+        <div class="om-lead">
+          <div style="font-family:'Fraunces',serif;font-size:12.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#B3782C;margin-bottom:16px">Lead Story · The Engineer</div>
+          <h1 style="margin:0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,5.6vw,80px);line-height:.92;letter-spacing:-.022em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">Building the machines that move people&nbsp;<em style="font-style: italic; color: rgb(179, 120, 44);">safely</em></h1>
+          <p style="font-style:italic;font-weight:300;font-size:clamp(18px,1.7vw,23px);line-height:1.42;color:#245A40;margin:1.1rem 0 1rem;text-wrap:pretty">Levi Rudolph, a mechanical engineering student at UW–Madison, works where project management meets the design of safety-critical systems.</p>
+          <p style="font-family:'Fraunces',serif;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 1.1rem">By Levi Rudolph <em style="font-family:'Newsreader',serif;color:#6E7E6C;font-style:italic;text-transform:none;letter-spacing:0;font-weight:400">· Mechanical Engineering, Class of 2028</em></p>
+          <hr style="border:0;border-top:3px solid #16362A;box-shadow:0 3px 0 #16362A;margin:0 0 1.3rem">
+          <figure style="margin:0 0 1.3rem">
+            <div style="position:relative;background:linear-gradient(158deg,#2C6A4B,#16362A);border:1px solid #16362A;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <div class="om-cube" data-model="models/suspended-vehicle.glb" aria-hidden="true" style="width:78%;height:90%;pointer-events:none"></div>
+              <span style="position:absolute;top:12px;left:14px;font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#F4EFE1;opacity:.82">Fig. 1 · Front Page</span>
+            </div>
+            <figcaption style="display:flex;gap:.55rem;margin-top:.6rem"><span style="width:2px;background:#B3782C;flex:none"></span><span style="font-family:'Newsreader',serif;font-style:italic;font-size:.92rem;line-height:1.42;color:#6E7E6C">Class-4 suspended ride vehicle, modelled to ASTM F2291 — one of seven cases in this edition.</span></figcaption>
+          </figure>
+          <div id="lede" style="font-size:clamp(15.5px,1.3vw,17px);line-height:1.66;color:rgba(22,54,42,.84);column-count:2;column-gap:clamp(26px,3vw,44px);column-rule:1px solid rgba(22,54,42,.22)"><p style="margin:0"><span style="float:left;font-family:'Fraunces',serif;font-weight:600;font-size:3.5rem;line-height:.66;padding:.04em .1em 0 0;color:#2C6A4B">A</span> mechanical engineering student at UW–Madison working in <em style="font-family:'Fraunces',serif;font-style:italic;color:#B3782C;font-weight:500">project management</em>, <em style="font-family:'Fraunces',serif;font-style:italic;color:#B3782C;font-weight:500">technical project engineering</em>, and the mechanical design of <em style="font-family:'Fraunces',serif;font-style:italic;color:#B3782C;font-weight:500">safety-critical systems</em>. From launched model coasters to Class-4 restraint hardware, the through-line stays the same — ask the right question before trusting the system that already exists.</p></div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem">
+            <a class="om-btn om-btn-primary" href="#work" style="font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:#2C6A4B;color:#F4EFE1;border:1px solid #2C6A4B;padding:13px 22px;transition:transform .12s ease,box-shadow .12s ease,background .12s ease">Read the record →</a>
+            <a class="om-btn om-btn-ghost" href="#resume" style="font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:transparent;color:#16362A;border:1px solid #16362A;padding:13px 22px;transition:transform .12s ease,box-shadow .12s ease">Download Resume</a>
+          </div>
+        </div>
+
+        <!-- Particulars rail -->
+        <aside class="om-particulars" style="border-left:1px solid rgba(22,54,42,.22);padding-left:clamp(18px,2vw,28px)">
+          <div style="font-family:'Fraunces',serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#16362A;padding-bottom:11px;border-bottom:3px solid #16362A;margin-bottom:2px">The Particulars</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Discipline</div><div style="font-family:'Fraunces',serif;font-size:16.5px;color:#16362A;margin-top:5px;line-height:1.18">Mechanical Engineering</div></div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Class of</div><div style="font-family:'Fraunces',serif;font-size:16.5px;color:#16362A;margin-top:5px;line-height:1.18">2028 · UW–Madison</div></div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Standing</div><div style="font-family:'Fraunces',serif;font-size:16.5px;color:#16362A;margin-top:5px;line-height:1.18">3.75 GPA · Dean's List 6/6</div></div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Focus</div><div style="font-family:'Fraunces',serif;font-size:16.5px;color:#16362A;margin-top:5px;line-height:1.18">Themed Entertainment</div></div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Based</div><div style="font-family:'Fraunces',serif;font-size:16.5px;color:#16362A;margin-top:5px;line-height:1.18">Madison, Wisconsin</div></div>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:18px">
+            
+            
+          </div>
+        </aside>
+      </div><div style="margin-top:22px;background:#E9DFC8;border:1px solid #16362A;padding:15px 15px 17px;box-shadow:4px 4px 0 #B3782C">
+            <div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3782C">Notice</div>
+            <div style="font-family:'Fraunces',serif;font-weight:500;font-size:16.5px;line-height:1.16;color:#16362A;margin-top:7px">Now accepting Summer 2026 internships.</div>
+          </div>
+    </div>
+  </section><section data-screen-label="About" id="about" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <div data-io="" style="max-width:1240px;margin:0 auto">
+      <div style="margin-bottom:clamp(44px,5vw,64px)">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#16362A"><span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span>About<span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span></div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.4vw,18px);color:#6E7E6C;margin-top:.75rem">The person behind the by-line</div>
+          <h2 style="margin:.55rem 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,6vw,80px);line-height:.96;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">In his own words</h2>
+        </div>
+      </div>
+      <div class="om-aboutgrid" style="display:grid;grid-template-columns:minmax(0,1fr) clamp(272px,25vw,340px);gap:clamp(34px,5vw,62px);align-items:start">
+        <div style="align-self:stretch">
+          <div class="om-aboutbody" style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(16px,1.32vw,18px);line-height:1.62;color:rgba(22,54,42,.86);column-count:2;column-gap:clamp(26px,3vw,42px);column-rule:1px solid rgba(22,54,42,.22);text-wrap:pretty">
+            <p style="margin:0 0 1.05rem"><span style="float:left;font-family:'Fraunces',serif;font-weight:600;font-size:3.5em;line-height:.72;color:#2C6A4B;padding:.02em .1em 0 0;font-variation-settings:'SOFT' 40,'WONK' 0">I</span> started an engineering club because there wasn't a clear way into themed entertainment. Now it's 340+ members deep, with a seat at ASTM F24, IAAPA, and TMU Thrill Design Comp.</p>
+            <p style="margin:0">I founded a startup to save project managers hundreds of hours a year — building the mathematically efficient scheduling tool that didn't exist.</p>
+          </div>
+          <figure style="margin:clamp(30px,3vw,40px) 0 0;border-top:3px solid #16362A;border-bottom:1px solid rgba(22,54,42,.22);padding:clamp(24px,2.6vw,32px) 0">
+            <blockquote style="margin:0;max-width:40rem;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,38px);line-height:1.12;letter-spacing:-.015em;color:#2C6A4B;text-wrap:balance"><span style="color: rgb(179, 120, 44); font-size: 1.6em; line-height: 0; vertical-align: -0.28em;">“</span>Good engineering lives in the art of asking the right question - not in trusting the systems that already exist.<span style="color: rgb(179, 120, 44); font-size: 1.6em; line-height: 0; vertical-align: -0.28em;">”</span></blockquote>
+            <figcaption style="font-family:'Fraunces',serif;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#6E7E6C;margin-top:1.2rem">Levi Rudolph</figcaption>
+          </figure>
+        </div>
+        <aside style="background:#E9DFC8;border:1px solid #16362A;box-shadow:4px 4px 0 #B3782C;padding:clamp(18px,1.6vw,22px)">
+          <figure style="margin:0 auto">
+            <div style="position:relative;overflow:hidden">
+              <img src="images/headshot-2.jpg" alt="Levi Rudolph" width="2805" height="4024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto">
+            </div>
+            <figcaption style="display:flex;gap:.5rem;margin-top:.6rem"><span style="width:2px;background:#B3782C;flex:none"></span><span style="font-family:'Newsreader',serif;font-style:italic;font-size:13px;line-height:1.4;color:#6E7E6C">Levi Rudolph</span></figcaption>
+          </figure>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SELECTED WORK ===================== -->
+  <section data-screen-label="Work" id="work" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-io="" style="margin-bottom:clamp(44px,5vw,64px)">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#16362A"><span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span>Selected Works<span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span></div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.4vw,18px);color:#6E7E6C;margin-top:.75rem">Eight cases · 2024–2026</div>
+          <h2 style="margin:.55rem 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,6vw,80px);line-height:.96;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">Things I designed, built and broke</h2>
+        </div>
+      </div>
+
+        <!-- Lead story -->
+      <a href="#project-7" data-target="project-7" onClick="{{ cardClick }}" class="om-lead2" data-io="" style="display:block;text-decoration:none;color:inherit;border-top:3px solid #16362A;box-shadow:0 4px 0 #16362A;padding-top:clamp(20px,2.4vw,30px);margin-top:16px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#B3782C">Independent</div>
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6E7E6C">Case No. 01 · 2026</div>
+        </div>
+        <h3 class="om-ptitle" style="margin:12px 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,5.2vw,68px);line-height:.96;letter-spacing:-.02em;font-variation-settings:'SOFT' 40,'WONK' 0;transition:color .35s;max-width:16ch">5 DOF Robotic Arm Attraction Model</h3>
+        <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(17px,1.6vw,23px);color:#6E7E6C;margin-top:12px">Fully Custom Arm Down to the Actuator</div>
+        <div style="font-family:'Fraunces',serif;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#16362A;margin-top:14px;padding-bottom:15px;border-bottom:1px solid rgba(22,54,42,.22)">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2026</span> <span style="color:#B3782C">· In Progress</span></div>
+        <div class="om-leadbody" style="display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,3vw,46px);margin-top:22px;align-items:start">
+          <figure style="margin:0">
+            <div class="om-clipfig" style="position:relative;border:1px solid #16362A;aspect-ratio:16/10;overflow:hidden;background:#E9DFC8">
+              <img loading="lazy" decoding="async" src="images/5dof-cover.png" alt="5-DOF robotic arm attraction model" style="width:100%;height:100%;object-fit:contain;object-position:50% 50%">
+            </div>
+            <figcaption style="display:flex;gap:.5rem;margin-top:.55rem"><span style="width:2px;background:#B3782C;flex:none"></span><span style="font-family:'Newsreader',serif;font-style:italic;font-size:13.5px;line-height:1.42;color:#6E7E6C">5-DOF robotic arm attraction model.</span></figcaption>
+          </figure>
+          <div style="display:flex;flex-direction:column;height:100%">
+            <p style="margin:0;font-family:'Newsreader',serif;font-size:clamp(15px,1.15vw,16.5px);line-height:1.6;color:rgba(22,54,42,.84);text-wrap:pretty"><span style="float: left; font-family: Fraunces, serif; font-weight: 600; font-size: 3em; line-height: 0.66; color: rgb(44, 106, 75); padding: 0.02em 0.12em 0px 0px;">T</span>his in development project is a tabletop scale robotic arm with a fully custom engineered design, from the actuators all the way up to the fully ASTM F24 2291 Class-4 Compliant restraint for the bucky badger rider.&nbsp;<br><br>This features a 20:1 Cycloidal Drive, and tight packaging of all the components. The steppers are run from a TMC 2209 Motor Controller with UART communication to an ESP32.&nbsp;<br>&nbsp;The restraint is a ratcheting solenoid activated restraint, with mechanical and electrical compliance with the standard. The ride program features load unload characteristics, preventing the ride cycle to start if the restraints are not locked.</p>
+            <div style="flex:1;min-height:20px"></div>
+            <div class="om-cardcue" style="margin-top:22px;padding-top:16px;border-top:3px solid #16362A;font-family:'Newsreader',serif;font-style:italic;font-size:16px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:19px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- department break -->
+      <div data-io="" style="display:flex;align-items:center;gap:1.1rem;margin:clamp(32px,4.5vw,56px) 0 clamp(22px,2.6vw,32px)"><span style="font-family:'Fraunces',serif;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#16362A;white-space:nowrap">More on the desk</span><span style="flex:1;height:0;border-top:3px solid #16362A;box-shadow:0 3px 0 #16362A"></span></div>
+
+      <!-- clippings — newspaper columns -->
+      <div class="om-clipwrap" data-io="">
+        <a href="#project-6" data-target="project-6" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>Independent · Founder</span><span style="color:#6E7E6C">No. 02</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">Attend.</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">Mass meeting scheduler on custom graph algorithms</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2026</span> <span style="color:#B3782C">· In Progress</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;border:1px solid #16362A;aspect-ratio:16/10;overflow:hidden;background:#E9DFC8">
+              <img loading="lazy" decoding="async" src="images/attend-screenshot.png" alt="Attend. product screenshot" style="width:100%;height:100%;object-fit:contain;object-position:50% 50%">
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">A meeting scheduler that models availability as a graph and searches it, instead of intersecting calendars and hoping something survives.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+
+        <a href="#project-1" data-target="project-1" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>BiTE · Chief Engineer</span><span style="color:#6E7E6C">No. 03</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">Bucky's Blast Off</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">Launching model roller coaster</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2024</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;background:linear-gradient(158deg,#2C6A4B,#16362A);border:1px solid #16362A;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <div class="om-cube" data-model="models/newtrain_2recolor2.glb" aria-hidden="true" style="width:84%;height:88%;pointer-events:none"></div>
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">Chief engineer on a 31-person build of a pneumatically launched model coaster — sizing the launch for the exit velocity the layout demanded, checking the acceleration profile through the first element, and setting the fabrication plan so assembly never idled waiting on a part.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+
+        <a href="#project-2" data-target="project-2" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>BiTE · Chief Engineer</span><span style="color:#6E7E6C">No. 04</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">ASTM F2291 Class-4 Suspended Ride Vehicle</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">Suspended coaster vehicle model</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2025</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;background:linear-gradient(158deg,#2C6A4B,#16362A);border:1px solid #16362A;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <div class="om-cube" data-model="models/suspended-vehicle.glb" aria-hidden="true" style="width:84%;height:88%;pointer-events:none"></div>
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">A Class-4 suspended ride vehicle modelled to ASTM F2291 — from restraint geometry to the clearance envelope it sweeps against track and structure.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+
+        <a href="#project-3" data-target="project-3" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>BiTE · Chief Engineer</span><span style="color:#6E7E6C">No. 05</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">36 sq ft Dark Ride</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">Physical Model that is live VR-viewable</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2025</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;background:linear-gradient(158deg,#2C6A4B,#16362A);border:1px solid #16362A;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <div class="om-cube" data-model="" aria-hidden="true" style="width:84%;height:88%;pointer-events:none"></div>
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">A thirty-six-square-foot dark ride, built as a physical model and live viewable through VR.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+
+        <a href="#project-5" data-target="project-5" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>Technical Report</span><span style="color:#6E7E6C">No. 06</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">Additive vs. Subtractive Manufacturing for Aircraft Engine Components</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">A weighted trade study of two routes for jet-engine parts</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2026</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;border:1px solid #16362A;aspect-ratio:16/10;overflow:hidden;background:#E9DFC8">
+              <img loading="lazy" decoding="async" src="images/addsub-cover.jpg" alt="Additively manufactured aircraft engine fuel nozzle" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%">
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">Weighted scoring across five production criteria that ended in a near tie — a more useful answer than a clean winner would have been.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+
+                <a href="#project-4" data-target="project-4" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>ASTM · Task Group</span><span style="color:#6E7E6C">No. 07</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">ASTM F24.80 Harmonization — Historical Change Record</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">Ride-safety standards historical documentation</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2025</span> <span style="color:#B3782C">· In Progress</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;background:#E9DFC8;border:1px solid #16362A;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:12px">
+              <img loading="lazy" decoding="async" src="assets/logo-astm.png" alt="ASTM International" style="max-width:90%;max-height:90%;object-fit:contain;display:block">
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">Tracing why each clause was written — the hazard it was meant to address, and the wording the committee rejected on the way there.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+
+        <a href="#project-8" data-target="project-8" onClick="{{ cardClick }}" class="om-clip">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Fraunces',serif;font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C"><span>Coursework · Team Lead</span><span style="color:#6E7E6C">No. 08</span></div>
+          <h3 class="om-ptitle" style="margin:9px 0 0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,1.9vw,25px);line-height:1.05;letter-spacing:-.01em;transition:color .35s">Folding Projector Robot</h3>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:#6E7E6C;margin-top:7px">A concept-to-CAD design study</div>
+          <div style="font-family:'Fraunces',serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:8px">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Filed 2023</span></div>
+          <figure style="margin:13px 0 0">
+            <div class="om-clipfig" style="position:relative;border:1px solid #16362A;aspect-ratio:16/10;overflow:hidden;background:#E9DFC8">
+              <img loading="lazy" decoding="async" src="images/projbot-cover.png" alt="Folding projector robot — Beam Buddy CAD render" style="width:100%;height:100%;object-fit:contain;object-position:50% 50%">
+            </div>
+          </figure>
+          <p style="margin:12px 0 0;font-family:'Newsreader',serif;font-size:14px;line-height:1.54;color:rgba(22,54,42,.82);text-wrap:pretty">A WALL-E-style projector robot that collapses to the size of a water bottle, then unfolds legs and a head to stand and frame a projected image.</p>
+          <div class="om-cardcue" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(22,54,42,.22);font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#245A40;display:flex;justify-content:space-between;align-items:center;transition:color .35s">Click for details <span style="font-style:normal;font-family:'Fraunces',serif;font-size:17px;color:var(--accent,#B3782C);transition:transform .35s,color .35s">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Expandable project pages ===== -->
+    <div id="project-1" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <div class="om-cube" data-model="models/newtrain_2recolor2.glb" aria-hidden="true" style="width:86%;height:86%;pointer-events:none"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Operations Officer</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Team</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">31 members</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Org</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">BiTE</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">SolidWorks</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Kinematic Analysis</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">CNC Milling</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">3D Printing</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Laser Cutting</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Wood Fabrication</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Scheduling · MS Project</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Scope &amp; Budget</span>
+                
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">03</span> &nbsp;—&nbsp; Project</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">Bucky's Blast Off</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">Launching model roller coaster</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">A working model of a pneumatic launch coaster, built on a 31-member team where I led the subsystem leads and personally sat on the launch team doing the launch design and analysis. The mechanism is a compressed-air launch driving a launch dog into the train, the same architecture as MAXX Force at Six Flags Great America. Rather than a full circuit, the layout is a single vertical spike, a choice we made deliberately: a spike shows kids the physics of a launch, kinetic energy trading for height and rolling back, far more clearly than a sprawling layout would.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up &amp; gallery</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The launch</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The launch was engineered to a hard target. I worked the kinematics to size the launch so the train exits at exactly the velocity needed to reach the top of the 26″ spike and roll back cleanly, no more and no less. That meant calculating launch acceleration, exit velocity, and spike clearance, then reconciling them against the losses in the real system. The biggest of those losses was the surprise: track friction during fabrication came in far higher than predicted and was killing our exit speed. The fix was unglamorous and effective. Graphite powder on the track dropped the friction enough to hit the target, and it stuck.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The train</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The train itself is a themed Bucky rocket ship, 4″ long and about 2.5″ wide, carrying the club's professor as its rider. It was demonstrated at Engineering Expo as part of the booth that won Best in Show.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The number</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The number I point to is reliability: the model has run over 5,000 cycles across two years of demonstration with zero maintenance. For a student-built mechanism with a pneumatic launch and moving train, that is the real proof it was engineered, not just assembled.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-model-full.jpg" alt="Bucky's Blast Off model — full layout with vertical spike" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-track-detail.jpg" alt="Track and themed show elements up close" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-launch-base.jpg" alt="Pneumatic launch base with rack drive" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-cad-review.jpg" alt="Reviewing the launch assembly in SolidWorks" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-cheese-stack.jpg" alt="Themed scenic props in fabrication" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-team-meeting.jpg" alt="Team design meeting" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-expo-booth.jpg" alt="Bucky's Blast Off at Engineering Expo" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/bucky-team-expo.jpg" alt="The team with the model at Engineering Expo" style="display:block;width:100%;height:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-4" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:clamp(40px,6vw,90px)">
+            <img loading="lazy" decoding="async" src="assets/logo-astm.png" alt="ASTM International" style="max-width:100%;max-height:100%;object-fit:contain;display:block">
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Task Group Member</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Since</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">2025</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Committee</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">F24.80</div></div>
+              <div style="padding:18px 20px;border-top:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Status</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">In Progress</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">ASTM F24</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Human Factors</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">08</span> &nbsp;—&nbsp; Project</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">ASTM F24.80 Harmonization — Historical Change Record</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">Ride-safety standards documentation</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">Ongoing work I am doing on a two-person team through the Next-Gen ASTM group, contributing to F24.80, the harmonization standard for amusement rides and devices. The goal is to build a historical record and change log that captures everything that changed between versions of the standard, and, more importantly, documents why each change was made. Standards evolve version to version, but the reasoning behind a given revision often lives only in the memory of the people who were in the room. Once that context is lost, future committees end up relitigating decisions that were already settled for good reasons. This record is meant to prevent that, giving future standard development a clear line of sight into the intent behind the language it inherits.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up &amp; gallery</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Sourcing the “why”</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The part that makes this real work rather than a paperwork exercise is how we are sourcing the “why.” Rather than guessing at intent from the redlines, we are conducting technical interviews with the people who actually made the changes, and pairing what they tell us with the version history so each documented change is tied to the reasoning that drove it.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">What it represents</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The project is in progress. What it represents is unusual for a student: direct involvement inside a working ASTM subcommittee, alongside the industry professionals who write and maintain the safety standards the amusement industry runs on, doing the kind of technical documentation and institutional-memory work that shapes how those standards develop going forward.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:4/3;overflow:hidden;break-inside:avoid;margin-bottom:16px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="slot-astm-g1" shape="rect" placeholder="Committee documentation excerpt" hint-size="100%,100%" style="width:100%;height:100%"></x-import></div>
+            <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:4/3;overflow:hidden;break-inside:avoid;margin-bottom:16px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="slot-astm-g2" shape="rect" placeholder="Task group meeting" hint-size="100%,100%" style="width:100%;height:100%"></x-import></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-2" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <div class="om-cube" data-model="models/suspended-vehicle.glb" aria-hidden="true" style="width:86%;height:86%;pointer-events:none"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Chief Engineer</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Team</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">5 members</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Standard</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">ASTM F2291</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">SolidWorks</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Kinematic Analysis</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">ASTM F2291 Class-4</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Restraint Systems</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">3D Printing</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Laser Cutting</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Wood Fabrication</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Document Control</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Scope &amp; Budget</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">02</span> &nbsp;—&nbsp; Project</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">ASTM F2291 Class-4 Suspended Ride Vehicle</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">ASTM F2291 Class-4 vehicle model</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">A tabletop working model of an inverted (“suspended”) coaster vehicle, built for Engineering Expo to teach local children how these ride mechanisms work and, more importantly, how they keep riders safe. I led a 5-member team on it. The model is a full ride vehicle plus a track segment and the supports it demonstrates on, presented the way manufacturers show off vehicles at IAAPA rather than as an isolated part on a table. It runs 24″ long and carries a 6″ scale patron.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up &amp; gallery</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The restraint</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The centerpiece is a dual-redundant, ratcheting over-the-shoulder restraint that is compliant with ASTM F2291 Class-4 both mechanically and electrically, so no single failure in either domain can release the rider. This restraint was the predecessor to the one I later designed for my robotic arm ride model, and it is where the approach was first worked out. The design is backed by real engineering: restraint load cases, structural analysis of the suspension carrying the vehicle under the track, and material and fabrication choices sized to the loads rather than guessed. The vehicle, track, and supports were produced with 3D printing, laser cutting, and CNC machining.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Leading the team</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The part I am proudest of as team lead was not any single component. It was getting four other people to actually open the ASTM standard, read it, understand what Class-4 requires, and implement it correctly in hardware. Standards work is where most student projects wave their hands, and turning a dense specification into a fabricated, demonstrable mechanism that a team of five understood end to end is the real result.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The record</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The finished model was fabricated and demonstrated at Engineering Expo as part of the booth that won Best in Show.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/suspended-vehicle-photo.jpg" alt="Full suspended ride vehicle and track segment" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/suspended-control-panel.jpg" alt="Restraint engaged/released status panel" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/suspended-expo.jpg" alt="The model demonstrated at Engineering Expo" style="display:block;width:100%;height:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-3" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <div class="om-cube" data-model="" aria-hidden="true" style="width:86%;height:86%;pointer-events:none"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Operations Officer</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Team</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">40 members</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Footprint</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">36 sq ft</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">SolidWorks</span>
+                
+                
+                
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">3D Printing</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Laser Cutting</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Wood Fabrication</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Scheduling · MS Project</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Document Control</span>
+                
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">04</span> &nbsp;—&nbsp; Project</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">36 sq ft Dark Ride</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">VR-viewable model attraction</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">A fully realized dark ride built into a 36 sq ft footprint, with a 40 ft ride path, six show scenes, seven servo-driven animatronics, a themed show set, and a POV camera fixed to the vehicle so the whole thing can be experienced from the guest's seat as if it were full scale. I led the project as Operations Officer on a 40-member team, which meant I ran the subsystem team leads: owning the technical design across subsystems, keeping the track, vehicle, show, and controls teams integrated and unblocked, and steering the engineering and analysis that tied it all together.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up &amp; gallery</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The ride</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The ride is a tracked, continuously moving system, and it tells a story. The vehicle is a submarine descending deeper and deeper into the ocean: it gets startled by a shark, is guided onward by bioluminescent fish, discovers a wrecked ship, and finishes with a conducting octopus. Each of the seven animatronics runs on its own Arduino Nano, all coordinated by a master ESP32 that sequences the animatronics against the vehicle's motion so scenes trigger on cue as the sub arrives.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Hands-on engineering</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">Beyond the leadership role, I did hands-on engineering: I designed the ride enclosure and the cable routing for the whole model, and I led the track and ride vehicle team closely enough to be in the mechanical design, not just managing it.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The record</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The model was demonstrated at Engineering Expo as part of the booth that won Best in Show. This year it is being upgraded from the single continuously moving vehicle to a three-vehicle system with block zones and timed dispatches, along with additional animatronics, moving the model closer to how a real dark ride manages throughput and spacing.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-whiteboard.jpg" alt="Show-scene brainstorm on the whiteboard" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-recruiting.jpg" alt="Build-team recruiting presentation" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-enclosure.jpg" alt="Ride enclosure under construction" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-dividers.jpg" alt="Show-scene dividers assembled in the enclosure" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-scenery.jpg" alt="Painted ocean scenery for the show set" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-finished.jpg" alt="Finished ride with track and animatronics" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/darkride-expo.jpg" alt="The dark ride demonstrated at Engineering Expo" style="display:block;width:100%;height:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="project-5" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;overflow:hidden">
+            <img loading="lazy" decoding="async" src="images/addsub-cover.jpg" alt="Additively manufactured aircraft engine fuel nozzle" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%">
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Author</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Type</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Trade Study</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Technical Writing</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Weighted Trade Study</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Aerospace Manufacturing</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">06</span> &nbsp;—&nbsp; Report</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.02em">Additive vs. Subtractive Manufacturing for Aircraft Engine Components</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">A weighted trade study of two routes for jet-engine parts</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">A technical report evaluating whether additive or subtractive manufacturing is the better fit for producing aircraft engine components, written to persuade a mixed audience of engineers and non-technical stakeholders.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for the full write-up</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Method &amp; Result</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">I built the comparison around a weighted scoring of the criteria that actually drive a production decision: material efficiency, lead time, part strength, proven failure history, and scale economics. When the numbers came back, the two methods landed in a near tie. That result was more useful than a clean winner would have been, because it meant the real answer was not "which method is better" but "which method is better for which component." I owned the comparative analysis, the recommendation, and the conclusions and next-steps sections of the report.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Recommendation</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">My recommendation was scoped rather than universal. Additive manufacturing makes sense for components with complex internal geometries and lower production volumes, like fuel nozzles or parts with internal cooling routes that subtractive methods physically cannot produce. Those are exactly the cases where additive's lead-time and material-efficiency gains matter most, and where its weaker part-strength score and risk of layer separation matter least, since the parts run in small batches and can be inspected individually. Subtractive manufacturing should stay the standard for high-volume, high-risk parts like housings and brackets, where proven strength records and scale efficiency outweigh any material savings.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Mitigations</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The recommendation only holds up if the risks are handled directly, so I paired it with three mitigations. Certification should roll out in phases, starting with non-critical components, so failure data can accumulate under low-stakes conditions before additive parts are trusted anywhere flight-critical. Z-pinning and finish machining should become standard practice for additive components, since both measurably close the fatigue gap between additive and wrought material. Adoption should come with workforce retraining, enabling machinists with deep subtractive experience get redirected onto additive lines rather than displaced. I also worked through the ethical dimension of that last point, since a manufacturing shift like this has real consequences for the people running the floor.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">In Summary</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The report demonstrates technical writing for a split audience, analytical rigor in reaching a defensible recommendation from an ambiguous result, and working domain knowledge of aerospace manufacturing.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/addsub-scoring.png" alt="Weighted decision matrix comparing additive and subtractive manufacturing across five criteria" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/addsub-title.png" alt="Report title slide: Optimization of Aircraft Engine Production — A Comparison of Competing Manufacturing Techniques" style="display:block;width:100%;height:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="project-6" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;overflow:hidden">
+            <img loading="lazy" decoding="async" src="images/attend-screenshot.png" alt="Attend. product screenshot" style="width:100%;height:100%;object-fit:contain;object-position:50% 50%">
+
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Founder</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Status</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">In pilot</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Domain</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Graph Theory</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Python</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Graph Theory</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">FastAPI</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">PostgreSQL</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Azure</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Microsoft Graph API</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Microsoft Entra</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">05</span> &nbsp;—&nbsp; Project</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">Attend.</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">Mass meeting scheduler on custom graph algorithms</div>
+            <p style="margin:16px 0 0;font-family:'Newsreader',serif;font-style:italic;font-size:clamp(16px,1.4vw,19px);line-height:1.5;color:#245A40">A B2B Outlook add-in that plugs into Microsoft 365 and schedules mass meetings automatically, on a graph-theory optimizer I designed.</p>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">Attend is a startup I founded, funded, designed, and built myself. It came out of a year of professional engineering management work, where I watched a huge amount of time disappear into meetings: meetings that ran too long for what they accomplished, meetings too short to matter, meetings with the wrong people in the room, and, worst of all, the endless back-and-forth of just getting them scheduled. Coordinating a large meeting today means manually juggling everyone's availability, priority, and room constraints by hand, and no existing product actually solves that. They schedule what you tell them to. None of them find the optimal time and routing on their own.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">How it works</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">So I built the thing that should exist. Attend is a B2B Outlook add-in that plugs into Microsoft 365 and schedules mass meetings automatically. At its core is a graph-theory-based optimizer I designed: it first guarantees every required attendee can actually make it, then maximizes how many optional attendees can join, then optimizes room selection by capacity and travel distance. It pulls live availability through the Microsoft Graph API, intersects everyone's free time, and returns the genuinely best slot rather than the first one that technically works.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Built solo</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The part I am most proud of is that I built all of it solo, and most of it was territory I had never touched. Going in, I knew basic Python and nothing else. To ship this I taught myself graph theory to build the optimizer, and the entire Azure hosting and backend world to run it: an async FastAPI backend, a multi-tenant PostgreSQL database with proper tenant isolation, secure Microsoft Entra authentication, and cloud hosting and storage. I funded the whole thing out of my own student accounts.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The record</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">Attend is in pilot use now. More than the product itself, it is the clearest evidence of how I work: I find a real problem, I decide it is worth solving, and I go learn whatever I have to in order to solve it well.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="project-7" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;overflow:hidden">
+            <img loading="lazy" decoding="async" src="images/5dof-detail.webp" alt="5-DOF robotic arm attraction model" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%">
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Solo — design, analysis, build</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Year</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">2026</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Status</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">In fabrication</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">SolidWorks</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Cycloidal drive</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">FEA</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Inverse kinematics</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">ESP32</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">TMC2209</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">01</span> &nbsp;—&nbsp; Project</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">5 DOF Robotic Arm Attraction Model</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">Fully Custom Arm Down to the Actuator</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">A solo-designed, desktop-scale working model of a “KUKA coaster” — the robotic-arm attraction type where a passenger capsule rides the end of a multi-axis industrial arm through a programmed motion profile. The scale patron is a 6″ Bucky Badger figure seated in a fully ASTM F2291 Class-4 compliant restraint, and the platform is modular, so one arm can run different ride profiles rather than being locked to a single motion.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up &amp; gallery</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The drivetrain</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The arm has five joints, giving it five degrees of freedom — one rotational axis per joint. Every joint is driven through a cycloidal reduction I designed from scratch: a 20:1 stage with 21 fixed ring pins acting against a 20-lobe disc, run as a dual-disc pair set 180° apart so the eccentric masses balance each other. I generated the disc profile mathematically and imported it into SolidWorks equation driven curves, then packaged it around a 2.43″ pitch circle with 0.04″ of eccentricity. I chose cycloidal over harmonic drives for the two reasons that matter on a ride: near-zero backlash for repeatable motion, and tolerance for the shock loads a start-stop ride profile throws at the joints.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Actuation &amp; control</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">Actuation is a NEMA 17 stepper per joint driven by TMC2209 drivers, with motor current set in software over UART rather than by trimpot, all coordinated by an ESP32. A GT2 timing-belt stage sits between each motor and its cycloidal input, which offsets the motor axis for tighter packaging and leaves room to add reduction if a profile needs it.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The restraint</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">Because the ride profile I targeted put the model in Class-4 territory, the restraint had to meet that bar in full. I designed a dual-redundant, ratcheting over-the-shoulder lap bar that is compliant both mechanically and electrically, so a single failure in either domain does not release the patron.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The analysis</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The design is backed by real analysis, not just CAD: torque and load calculations at the joints, inverse kinematics for the arm, FEA on the loaded members, and a full dynamic-systems analysis of the ride arm through its motion.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The record</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">Full CAD assembly is complete, the cycloidal drive is built, and the arm segments are in fabrication now.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/5dof-cycloidal-disc.jpg" alt="3D-printed cycloidal drive, ring pins and dual-disc pair" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/5dof-bench-test.gif" alt="Ride arm running a motion profile on the bench" style="display:block;width:100%;height:auto"></div>
+            <div style="background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden;break-inside:avoid;margin-bottom:16px"><img loading="lazy" decoding="async" src="images/5dof-motor-test.jpg" alt="Cycloidal joint driven by a NEMA 17 stepper on the test bench" style="display:block;width:100%;height:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="project-8" class="om-detail">
+      <a href="#work" class="om-scrim" aria-label="Close" style="position:absolute;inset:0"></a>
+      <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;min-height:100%;padding:clamp(24px,5vw,64px);display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <a href="#work" class="om-back" style="text-decoration:none;color:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:color .3s">← Back to work</a>
+          <a href="#work" class="om-close" aria-label="Close" style="text-decoration:none;color:inherit;width:44px;height:44px;border:1px solid rgba(22,54,42,.28);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;transition:color .3s,border-color .3s">✕</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(16px,2vw,24px)">
+          <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,28px)">
+          <div style="background:#E9DFC8;border:1px solid rgba(22,54,42,.12);aspect-ratio:1;overflow:hidden">
+            <img loading="lazy" decoding="async" src="images/projbot-cover.png" alt="Folding projector robot — Beam Buddy CAD render" style="width:100%;height:100%;object-fit:contain;object-position:50% 50%">
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;border-top:1px solid rgba(22,54,42,.22);margin-top:32px">
+              <div style="padding:18px 20px 18px 0;border-bottom:1px solid rgba(22,54,42,.22)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Role</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Design &amp; Team Lead</div></div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Team</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">4 members</div></div>
+              <div style="padding:18px 0 18px 20px;border-bottom:1px solid rgba(22,54,42,.22);border-left:1px solid rgba(22,54,42,.12)"><div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.45)">Type</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:7px">Design Study</div></div>
+            </div>
+            <div style="margin-top:22px">
+              <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,54,42,.4);margin-bottom:10px">Tools &amp; Technologies</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">SolidWorks</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Geometric Modeling</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Mechanism Design</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">Technical Drawing</span>
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;background:#E9DFC8;color:#16362A;border:1px solid rgba(22,54,42,.5);border-radius:0">GD&amp;T</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:20px"><span style="color:var(--accent,#B3782C)">08</span> &nbsp;—&nbsp; Study</div>
+            <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.02em">Folding Projector Robot</h2>
+            <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(22,54,42,.6);margin-top:14px">Concept design study — geometric modeling final</div>
+            <p style="margin:26px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,54,42,.68)">A design project from my geometric modeling final, where the brief was to design a fictional piece of technology and take it from concept through full CAD. I designed a WALL-E-style projector robot built around one idea: it collapses down to the size of a water bottle for easy carrying, then unfolds — legs and a head deploy out of the packed body — to stand itself up and frame a projected image squarely against a wall.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;color:rgba(22,54,42,.45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 clamp(4px,1vw,8px)"><span style="display:inline-block;animation:om-scrollbounce 1.8s ease-in-out infinite">↓</span>Scroll for write-up &amp; gallery</div>
+        <div style="max-width:760px;border-top:1px solid rgba(22,54,42,.22);padding-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">The mechanism</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The concept is backed by a real mechanism, not just a nice shape. The folding and deployment are worked out underneath the design, so the legs and head actually have a path from stowed to standing rather than magically rearranging. I ran a center-of-gravity check to confirm the deployed robot stands stably on its own legs, which is the constraint that makes or breaks a fold-out form like this.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">Concept to CAD</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">I owned the design from paper to model: concept sketches, geometric dimensioning, orthographic drawings, and the mechanism layout, then led a 4-person team to take it into CAD. Leading the CAD effort meant setting the assembly structure, dividing the components across the team, and keeping everyone's parts consistent so the pieces actually fit together in the final assembly.</p>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:10px">What it shows</div>
+            <p style="margin:0;font-size:16.5px;line-height:1.8;color:rgba(22,54,42,.7)">The project stayed a design study rather than a build, but it demonstrates concept-to-CAD design leadership: generating an original mechanism on paper and driving a team to realize it as a coherent, buildable model.</p>
+          </div>
+        </div>
+        <div style="padding:clamp(32px,4vw,44px) 0 clamp(20px,3vw,28px)">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,54,42,.45);margin-bottom:18px">Gallery</div>
+          <div style="column-count:3;column-gap:16px">
+            <div style="break-inside:avoid;margin-bottom:16px;background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden"><img loading="lazy" decoding="async" src="images/projbot-doc-1.png" alt="Folding projector robot — design document, page 1" style="display:block;width:100%;height:auto"></div>
+            <div style="break-inside:avoid;margin-bottom:16px;background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden"><img loading="lazy" decoding="async" src="images/projbot-doc-2.png" alt="Folding projector robot — design document, page 2" style="display:block;width:100%;height:auto"></div>
+            <div style="break-inside:avoid;margin-bottom:16px;background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden"><img loading="lazy" decoding="async" src="images/projbot-doc-3.png" alt="Folding projector robot — design document, page 3" style="display:block;width:100%;height:auto"></div>
+            <div style="break-inside:avoid;margin-bottom:16px;background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden"><img loading="lazy" decoding="async" src="images/projbot-doc-4.png" alt="Folding projector robot — design document, page 4" style="display:block;width:100%;height:auto"></div>
+            <div style="break-inside:avoid;margin-bottom:16px;background:#F4EFE1;border:1px solid rgba(22,54,42,.12);overflow:hidden"><img loading="lazy" decoding="async" src="images/projbot-exploded.png" alt="Beam Buddy exploded view with parts list" style="display:block;width:100%;height:auto"></div>
+            <div style="break-inside:avoid;margin-bottom:16px;background:#E9DFC8;border:1px solid rgba(22,54,42,.12);overflow:hidden"><img loading="lazy" decoding="async" src="images/projbot-scene.png" alt="Beam Buddy rendered in use" style="display:block;width:100%;height:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section data-screen-label="Experience" id="experience" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-io="" style="margin-bottom:56px">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#16362A"><span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span>The Record<span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span></div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.4vw,18px);color:#6E7E6C;margin-top:.75rem">Where the work happened</div>
+          <h2 style="margin:.55rem 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,6vw,80px);line-height:.96;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">Track Record</h2>
+        </div>
+      </div>
+      <div>
+        <div data-io="" style="text-align:center;margin:0 0 4px">
+          <div style="display: inline-flex; align-items: center; gap: 1rem; font-family: 'Fraunces',serif; font-size: 20px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: #B3782C"><span style="flex:0 0 auto;width:clamp(30px,6vw,70px);height:1px;background:rgba(22,54,42,.32)"></span>Professional Experience<span style="flex:0 0 auto;width:clamp(30px,6vw,70px);height:1px;background:rgba(22,54,42,.32)"></span></div>
+        </div>
+        <article class="om-rec" data-io="" style="display:grid;grid-template-columns:210px minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start;padding:clamp(30px,3.4vw,46px) 0 clamp(34px,4vw,50px);border-top:3px solid #16362A;box-shadow:0 3px 0 #16362A">
+          <div class="om-recmeta" style="display:flex;flex-direction:column;gap:16px">
+            <img loading="lazy" decoding="async" src="assets/logo-wdi.png" alt="Walt Disney Imagineering" style="height:auto;width:auto;max-height:62px;max-width:185px;object-fit:contain;object-position:left center;display:block">
+            <div style="border-top:1px solid rgba(22,54,42,.22);padding-top:12px">
+              <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C">Jan <span style="color:#6E7E6C">✦</span> Jun 2026</div>
+              <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#6E7E6C;margin-top:6px">Glendale, California</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Project Engineer Intern</div>
+            <h3 style="margin:8px 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3vw,40px);letter-spacing:-.015em;line-height:1.02;color:#16362A;font-variation-settings:'SOFT' 40,'WONK' 0">Walt Disney Imagineering</h3>
+            <div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:12px;padding-bottom:14px;border-bottom:1px solid rgba(22,54,42,.22)">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Ride, Show &amp; AD&amp;E studios</span></div>
+            <p style="margin:16px 0 0;font-family:'Newsreader',serif;font-size:16px;line-height:1.62;color:rgba(22,54,42,.84);text-wrap:pretty"><span style="font-family:'Fraunces',serif;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#16362A">Glendale, Calif. —</span> Coordinated cross-discipline design across 3 concurrent projects in 2 portfolios — managing model &amp; sheet release, issue-resolution tracking, and clash detection in Autodesk Forma to hold drawing-control integrity across studios.</p>
+            <ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Led weekly work sessions of 95+ stakeholders across Ride, Show, and AD&amp;E studios to resolve design issues and align scope, schedule, and budget milestones.</span></li>
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Conceived and championed a novel lift system for critical show-element maintenance access, advancing it through design-review cycles to full project adoption.</span></li>
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Ran spatial, solar, and interference studies in Revit, Navisworks, and SolidWorks, and built 4+ Airtable databases (issue log, scheduler, integration framework) to centralize cross-studio tracking.</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="om-rec" data-io="" style="display:grid;grid-template-columns:210px minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start;padding:clamp(30px,3.4vw,46px) 0 clamp(34px,4vw,50px);border-top:1px solid rgba(22,54,42,.22);border-bottom:3px solid #16362A;box-shadow:0 3px 0 #16362A">
+          <div class="om-recmeta" style="display:flex;flex-direction:column;gap:16px">
+            <img loading="lazy" decoding="async" src="assets/logo-findorff.png" alt="J.H. Findorff &amp; Son" style="height:auto;width:auto;max-height:52px;max-width:185px;object-fit:contain;object-position:left center;display:block">
+            <div style="border-top:1px solid rgba(22,54,42,.22);padding-top:12px">
+              <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C">May <span style="color:#6E7E6C">✦</span> Dec 2025</div>
+              <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#6E7E6C;margin-top:6px">Madison, Wisconsin</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Project Engineer Co-Op</div>
+            <h3 style="margin:8px 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3vw,40px);letter-spacing:-.015em;line-height:1.02;color:#16362A;font-variation-settings:'SOFT' 40,'WONK' 0">J.H. Findorff &amp; Son</h3>
+            <div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:12px;padding-bottom:14px;border-bottom:1px solid rgba(22,54,42,.22)">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· $286M student-housing high-rises</span></div>
+            <p style="margin:16px 0 0;font-family:'Newsreader',serif;font-size:16px;line-height:1.62;color:rgba(22,54,42,.84);text-wrap:pretty"><span style="font-family:'Fraunces',serif;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#16362A">Madison, Wis. —</span> Managed two Madison student-housing high-rises totaling $286M, coordinating design and construction while ensuring compliance with plans, drawings, and municipal code.</p>
+            <ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Engineered a high-capacity loading dock for 5 concurrent deliveries of varying truck sizes — eliminating road closures while keeping forklift and waste operations flowing.</span></li>
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Designed an in-wall blocking system for all mounted fixtures with FEA validation and ADA-compliant variants meeting accessibility requirements.</span></li>
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Designed and validated a custom post-tension survey tool in SolidWorks, cutting engineer survey time 4×; authored $264K in interior, amenity, road, and safety contracts.</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div style="margin-top:clamp(48px,6vw,72px)">
+        <div data-io="" style="text-align:center;margin:0 0 4px">
+          <div style="display: inline-flex; align-items: center; gap: 1rem; font-family: 'Fraunces',serif; font-size: 20px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: #B3782C"><span style="flex:0 0 auto;width:clamp(30px,6vw,70px);height:1px;background:rgba(22,54,42,.32)"></span>Leadership Experience<span style="flex:0 0 auto;width:clamp(30px,6vw,70px);height:1px;background:rgba(22,54,42,.32)"></span></div>
+        </div>
+        <article class="om-rec" data-io="" style="display:grid;grid-template-columns:210px minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start;padding:clamp(30px,3.4vw,46px) 0 clamp(34px,4vw,50px);border-top:3px solid #16362A;border-bottom:3px solid #16362A;box-shadow:0 3px 0 #16362A">
+          <div class="om-recmeta" style="display:flex;flex-direction:column;gap:16px">
+            <img loading="lazy" decoding="async" src="assets/logo-bite.png" alt="BiTE" style="height:auto;width:auto;max-height:58px;max-width:160px;object-fit:contain;object-position:left center;display:block">
+            <div style="border-top:1px solid rgba(22,54,42,.22);padding-top:12px">
+              <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C">2024 <span style="color:#6E7E6C">✦</span> Now</div>
+              <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:#6E7E6C;margin-top:6px">Madison, Wisconsin</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#B3782C">Co-Founder &amp; Operations Officer</div>
+            <h3 style="margin:8px 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3vw,40px);letter-spacing:-.015em;line-height:1.02;color:#16362A;font-variation-settings:'SOFT' 40,'WONK' 0">Badgers in Themed Entertainment</h3>
+            <div style="font-family:'Fraunces',serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#16362A;margin-top:12px;padding-bottom:14px;border-bottom:1px solid rgba(22,54,42,.22)">By L. Rudolph <span style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;color:#6E7E6C">· Chief Engineer &amp; Project Director</span></div>
+            <p style="margin:16px 0 0;font-family:'Newsreader',serif;font-size:16px;line-height:1.62;color:rgba(22,54,42,.84);text-wrap:pretty"><span style="font-family:'Fraunces',serif;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#16362A">Madison, Wis. —</span> Founded and lead B.i.T.E., a registered engineering student organization now 340+ members strong.</p>
+            <ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Direct CAD design and fabrication expo projects, setting scope, schedule, and build standards across teams.</span></li>
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>Organize teams for TMU Thrill Design competitions and ASTM F24 Task Group meetings.</span></li>
+              <li style="display:grid;grid-template-columns:14px 1fr;gap:12px;font-family:'Newsreader',serif;font-size:15.5px;line-height:1.58;color:rgba(22,54,42,.72)"><span style="color:#B3782C;font-family:'Fraunces',serif">—</span><span>As Chief Engineer and Project Director, engineered mechanical assemblies of 580+ components in SolidWorks — ensuring kinematic function and manufacturing tolerances across the build.</span></li>
+            </ul>
+            <a href="https://bite.engr.wisc.edu/" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px;font-family:'Fraunces',serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#B3782C);text-decoration:none;border-bottom:1px solid var(--accent,#B3782C);padding-bottom:2px">Visit bite.engr.wisc.edu →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRESS ===================== -->
+  <section data-screen-label="Press" id="press" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-io="" style="margin-bottom:56px">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#16362A"><span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span>In the News<span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span></div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.4vw,18px);color:#6E7E6C;margin-top:.75rem">Coverage of the work</div>
+          <h2 style="margin:.55rem 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,6vw,80px);line-height:.96;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">Press Clippings</h2>
+        </div>
+      </div>
+      <div>
+        <a href="https://engineering.wisc.edu/news/in-the-loop-new-student-organization-is-taking-badgers-for-a-ride/" target="_blank" rel="noopener" class="om-proj" data-io="" style="display:grid;grid-template-columns:220px minmax(0,1fr) auto;gap:36px;align-items:center;text-decoration:none;color:inherit;padding:36px 0;border-top:1px solid rgba(22,54,42,.22);border-bottom:1px solid rgba(22,54,42,.22)">
+          <div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,#B3782C)">UW Engineering<br><span style="color:rgba(22,54,42,.45)">Mar 2026</span></div>
+          <div><h3 class="om-ptitle" style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);line-height:1.2;letter-spacing:-.01em;transition:color .35s">In the loop: New student organization is taking Badgers for a ride</h3><p style="margin:10px 0 0;font-size:15px;color:rgba(22,54,42,.55)">UW–Madison College of Engineering profiles the founding of BiTE and its mission to bring engineers into themed entertainment.</p></div>
+          <span class="om-arrow" style="font-family:'Fraunces',serif;font-size:26px;color:var(--accent,#B3782C);transition:transform .4s,color .4s;text-align:right">→</span>
+        </a>
+        <a href="https://wisconsinengineer.com/2026/08/29/take-a-bite-out-of-starting-a-new-club/" target="_blank" rel="noopener" class="om-proj" data-io="" style="display:grid;grid-template-columns:220px minmax(0,1fr) auto;gap:36px;align-items:center;text-decoration:none;color:inherit;padding:36px 0;border-bottom:1px solid rgba(22,54,42,.22)">
+          <div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,#B3782C)">Wisconsin Engineer<br><span style="color:rgba(22,54,42,.45)">Aug 2026</span></div>
+          <div><h3 class="om-ptitle" style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);line-height:1.2;letter-spacing:-.01em;transition:color .35s">Take a bite out of starting a new club</h3><p style="margin:10px 0 0;font-size:15px;color:rgba(22,54,42,.55)">The student-run magazine, in print since 1896, tells how two mechanical engineers turned a lecture-hall icebreaker into Badgers in Themed Entertainment.</p></div>
+          <span class="om-arrow" style="font-family:'Fraunces',serif;font-size:26px;color:var(--accent,#B3782C);transition:transform .4s,color .4s;text-align:right">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AWARDS ===================== -->
+  <section data-screen-label="Awards" id="awards" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-io="" style="margin-bottom:56px">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#16362A"><span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span>Honours<span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span></div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.4vw,18px);color:#6E7E6C;margin-top:.75rem">On the record</div>
+          <h2 style="margin:.55rem 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,6vw,80px);line-height:.96;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">Recognition</h2>
+        </div>
+      </div>
+      <div>
+        <div data-io="" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:36px;align-items:start;padding:36px 0;border-top:1px solid rgba(22,54,42,.22)">
+          <div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,#B3782C)">2026</div>
+          <div><h3 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);line-height:1.2;letter-spacing:-.01em">IAAPA Foundation Experiential Scholarship</h3><p style="margin:10px 0 0;font-size:15px;color:rgba(22,54,42,.55)">Awarded by the IAAPA Foundation to support study toward a career in the attractions industry.</p></div>
+        </div>
+        <div data-io="" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:36px;align-items:start;padding:36px 0;border-top:1px solid rgba(22,54,42,.22)">
+          <div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,#B3782C)">2023-2026</div>
+          <div><h3 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);line-height:1.2;letter-spacing:-.01em">Dean's List, College of Engineering</h3><p style="margin:10px 0 0;font-size:15px;color:rgba(22,54,42,.55)">Named to the Dean's List all six semesters at Wisconsin–Madison.</p></div>
+        </div>
+        <div data-io="" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:36px;align-items:start;padding:36px 0;border-top:1px solid rgba(22,54,42,.22);border-bottom:1px solid rgba(22,54,42,.22)">
+          <div style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,#B3782C)">2024</div>
+          <div><h3 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);line-height:1.2;letter-spacing:-.01em">Robert J Mensel Merit Scholarship</h3><p style="margin:10px 0 0;font-size:15px;color:rgba(22,54,42,.55)">Awarded by the College of Engineering for academic standing.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAPABILITIES ===================== -->
+  <section data-screen-label="Capabilities" id="toolkit" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-io="" style="margin-bottom:56px">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#16362A"><span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span>The Particulars<span style="flex:1;max-width:130px;height:1px;background:rgba(22,54,42,.4)"></span></div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.4vw,18px);color:#6E7E6C;margin-top:.75rem">Tools of the trade</div>
+          <h2 style="margin:.55rem 0 0;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,6vw,80px);line-height:.96;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:'SOFT' 40,'WONK' 0">Toolkit</h2>
+        </div>
+      </div>
+      <div data-io="" class="om-dir">
+        <div class="om-dircat">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C;margin-bottom:4px">CAD / Modeling</div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">SolidWorks</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Autodesk Inventor</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Revit</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Navisworks</span></div>
+        </div>
+        <div class="om-dircat">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C;margin-bottom:4px">Analysis</div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">FEA</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Kinematic Analysis</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">EES</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Python</span></div>
+        </div>
+        <div class="om-dircat">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C;margin-bottom:4px">Safety &amp; Standards</div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">ASTM F24</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">ASTM F2291 Class-4</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Restraint Systems</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Human Factors</span></div>
+        </div>
+        <div class="om-dircat">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C;margin-bottom:4px">Fabrication</div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">3D Printing</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">CNC Milling</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Laser Cutting</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Wood Fabrication</span></div>
+        </div>
+        <div class="om-dircat">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C;margin-bottom:4px">BIM / Coordination</div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Autodesk Forma / ACC</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Autodesk Build</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Clash Detection</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Bluebeam</span></div>
+        </div>
+        <div class="om-dircat">
+          <div style="font-family:'Fraunces',serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#B3782C;margin-bottom:4px">Project Controls</div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Scheduling · MS Project</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Airtable</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Scope &amp; Budget</span></div>
+          <div class="om-dirrow"><span style="font-family:'Fraunces',serif;font-size:17px;color:#16362A">Document Control</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESUME CTA ===================== -->
+  <section data-screen-label="Resume" id="resume" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px);border-bottom:1px solid rgba(22,54,42,.22)">
+    <a href="https://drive.google.com/drive/folders/13Ve8rNvkvD91Dlcaz9UkTVEJiMa4-WyZ?usp=sharing" target="_blank" rel="noopener" class="om-cta" data-io="" style="display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;max-width:1240px;margin:0 auto;text-decoration:none;color:inherit;border:1px solid var(--accent,#B3782C);padding:clamp(40px,6vw,72px) clamp(32px,5vw,60px);transition:background .4s,color .4s,border-color .4s">
+      <div>
+        <div style="font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#B3782C;margin-bottom:20px">Documents · For the record</div>
+        <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(38px,6.5vw,84px);line-height:.96;letter-spacing:-.02em">Download <span style="font-style:italic">Résumé</span></h2>
+        <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(22,54,42,.5);margin-top:20px">PDF · Updated 2026 · One page</div>
+      </div>
+      <span class="om-arrow" style="font-family:'Fraunces',serif;font-size:clamp(56px,10vw,120px);line-height:1;transition:transform .4s,color .4s">↓</span>
+    </a>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section data-screen-label="Contact" id="contact" style="padding:clamp(80px,10vw,150px) clamp(24px,5vw,72px) 0">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-io="" style="margin-bottom:36px"><div style="display:flex;align-items:center;gap:1rem;font-family:'Fraunces',serif;font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#16362A"><span>Correspondence</span><span style="flex:1;max-width:220px;height:1px;background:rgba(22,54,42,.35)"></span></div><div style="font-family:'Newsreader',serif;font-style:italic;color:#6E7E6C;font-size:clamp(15px,1.4vw,18px);margin-top:.6rem">Letters to the editor, welcome.</div></div>
+      <a href="mailto:levilrudolph@gmail.com" class="om-mail" data-io="" style="display:inline-block;text-decoration:none;color:inherit;font-family:'Fraunces',serif;font-weight:500;letter-spacing:-.02em;line-height:1;font-size:clamp(32px,7vw,104px);transition:color .3s;width:100%">levilrudolph@gmail.com</a>
+      <div data-io="" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:56px;padding-bottom:60px">
+        <a href="https://www.linkedin.com/in/levi-rudolph" target="_blank" rel="noopener" class="om-soc" style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#16362A;border:1px solid rgba(22,54,42,.28);padding:14px 26px;border-radius:0;transition:all .25s">LinkedIn →</a>
+        
+        
+        <a href="https://drive.google.com/drive/folders/13Ve8rNvkvD91Dlcaz9UkTVEJiMa4-WyZ?usp=sharing" target="_blank" rel="noopener" class="om-soc" style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--accent,#B3782C);border:1px solid var(--accent,#B3782C);padding:14px 26px;border-radius:0;transition:all .25s">Résumé →</a>
+      </div>
+    </div>
+    <div style="text-align:center;padding:clamp(48px,6vw,80px) clamp(24px,5vw,72px) clamp(28px,3vw,36px)">
+      <div style="color:#2C6A4B;font-size:1.4rem;letter-spacing:.4em">⁂</div>
+      <div style="font-family:'Fraunces',serif;font-weight:600;font-size:clamp(24px,3.4vw,36px);color:#2C6A4B;margin-top:1rem;font-variation-settings:'SOFT' 30,'WONK' 1">The Rudolph Record</div>
+      <p style="max-width:34rem;margin:1rem auto 0;font-family:'Newsreader',serif;font-style:italic;color:#6E7E6C;font-size:.98rem;line-height:1.5">Set in Fraunces and Newsreader. Printed on newsprint, in Madison, Wisconsin.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:26px clamp(24px,5vw,72px) 34px;border-top:1px solid rgba(22,54,42,.22);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(22,54,42,.45)">
+      <span>© 2026 Levi Rudolph</span><span>Designed &amp; Engineered</span><span style="color:var(--accent,#B3782C)">Available for 2026</span>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B3782C&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;,&quot;options&quot;:[&quot;#B3782C&quot;,&quot;#2C6A4B&quot;,&quot;#245A40&quot;,&quot;#16362A&quot;,&quot;#6E7E6C&quot;]},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  applyTheme() {
+    const r = document.documentElement;
+    const accent = this.props.accent || '#B3782C';
+    r.style.setProperty('--accent', accent);
+    r.setAttribute('data-rm', this.props.reduceMotion ? '1' : '0');
+    if (this.viewers && window.THREE) {
+      this.viewers.forEach((v) => { if (v.edges) v.edges.material.color.set(accent); });
+    }
+  }
+
+  // ---- newspaper page-turn into a project's detail page ----
+  cardClick(e) {
+    const card = e.currentTarget;
+    const target = card.dataset.target;
+    if (!target) return;
+    e.preventDefault();
+    if (this._animating) { window.location.hash = target; return; }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.location.hash = target;
+      return;
+    }
+    this._animating = true;
+    this.pageTurn(() => { window.location.hash = target; });
+  }
+
+  // Full-viewport broadsheet leaf hinged at the spine (left edge). It sweeps
+  // up and over, the incoming page darkening under it, then lifts clear —
+  // the reader turns to the next page of the paper.
+  pageTurn(revealAt) {
+    const dur = 1080;
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:fixed;inset:0;z-index:96;perspective:2600px;perspective-origin:0% 50%;pointer-events:none';
+
+    const shade = document.createElement('div');
+    shade.style.cssText = 'position:absolute;inset:0;background:radial-gradient(140% 120% at 0% 50%, rgba(22,54,42,.30), rgba(22,54,42,0) 55%);opacity:0';
+
+    const leaf = document.createElement('div');
+    leaf.style.cssText = 'position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;will-change:transform;transform:rotateY(0deg);box-shadow:0 0 70px rgba(22,54,42,.28)';
+
+    const front = document.createElement('div');
+    front.style.cssText = 'position:absolute;inset:0;backface-visibility:hidden;overflow:hidden;background:#F4EFE1';
+    front.innerHTML = this.leafFace();
+
+    const gloss = document.createElement('div');
+    gloss.style.cssText = 'position:absolute;inset:0;background:linear-gradient(100deg, rgba(255,255,255,0) 34%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 66%);opacity:0;pointer-events:none';
+    front.appendChild(gloss);
+
+    const back = document.createElement('div');
+    back.style.cssText = "position:absolute;inset:0;backface-visibility:hidden;overflow:hidden;background:#EBE1C9;transform:rotateY(180deg);display:flex;align-items:center;justify-content:center";
+    back.innerHTML = "<div style=\"font-family:Fraunces,serif;font-weight:600;font-size:min(30vw,340px);line-height:.8;color:rgba(44,106,75,.16);transform:scaleX(-1);font-variation-settings:'SOFT' 30,'WONK' 1\">R</div>";
+
+    leaf.appendChild(front);
+    leaf.appendChild(back);
+    wrap.appendChild(shade);
+    wrap.appendChild(leaf);
+    document.body.appendChild(wrap);
+
+    // reveal the destination page now, hidden behind the leaf
+    if (revealAt) revealAt();
+
+    const ease = 'cubic-bezier(.38,.08,.22,1)';
+    leaf.animate([
+      { transform: 'rotateY(0deg)' },
+      { transform: 'rotateY(-16deg)', offset: .12 },
+      { transform: 'rotateY(-180deg)' }
+    ], { duration: dur, easing: ease, fill: 'forwards' });
+    shade.animate([
+      { opacity: 0 }, { opacity: .55, offset: .5 }, { opacity: 0 }
+    ], { duration: dur, easing: 'ease-in-out', fill: 'forwards' });
+    gloss.animate([
+      { opacity: 0, offset: 0 }, { opacity: .85, offset: .34 }, { opacity: 0, offset: .52 }
+    ], { duration: dur, easing: 'ease-in-out' });
+
+    setTimeout(() => { wrap.remove(); this._animating = false; }, dur + 40);
+  }
+
+  // A broadsheet page: folio rule across the top, a ghosted nameplate, and
+  // the jump-line page number — the "Click for details" gag made literal.
+  leafFace() {
+    return ''
+      + '<div style="position:absolute;top:0;left:0;right:0;height:66px;border-bottom:3px solid #16362A;box-shadow:0 3px 0 #16362A;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#16362A"><span>The Rudolph Record</span><span style="color:#B3782C">\u2726</span><span>Continued&nbsp;\u2192</span></div>'
+      + '<div style="position:absolute;inset:66px 0 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;padding:0 8vw">'
+      +   '<div style="font-family:Fraunces,serif;font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#B3782C">Turn the page</div>'
+      +   '<div style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(46px,10vw,132px);line-height:.9;letter-spacing:-.02em;color:#2C6A4B;font-variation-settings:\'SOFT\' 40,\'WONK\' 0">The full dispatch</div>'
+      +   '<div style="width:120px;height:0;border-top:1px solid rgba(22,54,42,.22)"></div>'
+      +   '<div style="font-family:Newsreader,serif;font-style:italic;font-size:clamp(15px,1.6vw,20px);color:#6E7E6C">Continued inside \u2014 next page</div>'
+      + '</div>';
+  }
+
+  componentDidMount() {
+    this.applyTheme();
+    const html = document.documentElement;
+    const disarm = () => html.removeAttribute('data-armed');
+    let revealed = false;
+    html.setAttribute('data-armed', '1');
+    try {
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.setAttribute('data-shown', '1'); revealed = true; }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('[data-io]').forEach((el) => this._io.observe(el));
+    } catch (err) { disarm(); }
+    this._fail = setTimeout(() => { if (!revealed) disarm(); }, 600);
+
+    // three.js (~580KB) is NOT loaded up front. setupCubes only wires up
+    // observers; the library is fetched lazily the first time a 3D viewer
+    // actually scrolls near the viewport (see ensureThree / the render loop).
+    this.setupCubes();
+  }
+
+  ensureThree() {
+    if (window.THREE || this._threeLoading) return;
+    this._threeLoading = true;
+    const s1 = document.createElement('script');
+    s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s1.onload = () => {
+      const s2 = document.createElement('script');
+      s2.src = 'https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js';
+      document.head.appendChild(s2);
+    };
+    document.head.appendChild(s1);
+  }
+
+  // ---- 3D project previews (placeholder spinning cube; swappable for a
+  // converted STEP/GLB model via a .glb path in each cube's data-model attr) ----
+  waitForThree(cb, tries) {
+    tries = tries || 0;
+    if (window.THREE) return cb();
+    if (tries > 120) return;
+    setTimeout(() => this.waitForThree(cb, tries + 1), 50);
+  }
+
+  setupCubes() {
+    // Register viewers but DON'T build WebGL contexts or load models yet.
+    // Each one is initialized lazily the first time it's actually visible,
+    // so hidden detail modals and below-the-fold cards cost nothing on load.
+    this.viewers = [];
+    this._modelCache = {};
+    document.querySelectorAll('.om-cube').forEach((el) => {
+      if (el.__registered) return;
+      el.__registered = true;
+      this.viewers.push({ el, initialized: false });
+    });
+
+    let resizeT;
+    this._onCubeResize = () => {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(() => {
+        this.viewers.forEach((v) => {
+          if (!v.initialized) return;
+          const w = v.el.clientWidth, h = v.el.clientHeight;
+          if (w && h) { v.renderer.setSize(w, h); v.cam.aspect = w / h; v.cam.updateProjectionMatrix(); }
+        });
+      }, 180);
+    };
+    window.addEventListener('resize', this._onCubeResize);
+
+    // Visibility is tracked by an IntersectionObserver instead of measuring every
+    // cube every frame — per-frame getBoundingClientRect/getComputedStyle forced a
+    // full layout each tick and was the main source of scroll jank.
+    const byEl = new Map(this.viewers.map((v) => [v.el, v]));
+    this._cubeIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = byEl.get(e.target);
+        if (v) v.inView = e.isIntersecting;
+      });
+      this.refreshCubeGates();
+    }, { rootMargin: '120px 0px' });
+    this.viewers.forEach((v) => this._cubeIo.observe(v.el));
+
+    // detail panels are :target-gated (visibility:hidden when closed) — that only
+    // changes on navigation, so re-check it there rather than per frame
+    this._onHash = () => setTimeout(() => this.refreshCubeGates(), 60);
+    window.addEventListener('hashchange', this._onHash);
+    this.refreshCubeGates();
+
+    let last = 0;
+    const loop = (t) => {
+      this._cubeRaf = requestAnimationFrame(loop);
+      if (document.hidden) return;
+      if (t - last < 33) return; // cap WebGL work at ~30fps
+      last = t;
+      const rm = this.props.reduceMotion;
+      // Any viewer near the viewport? Kick off the one-time three.js fetch.
+      if (this.viewers.some((v) => v.inView && !v.gated)) this.ensureThree();
+      for (const v of this.viewers) {
+        if (!v.inView || v.gated) continue;
+        if (!window.THREE || !window.THREE.GLTFLoader) continue;
+        if (!v.initialized) this.initViewer(v);
+        if (!v.initialized) continue;
+        if (!rm) v.group.rotation.y += 0.012;
+        v.group.rotation.x = 0.32;
+        v.renderer.render(v.scene, v.cam);
+      }
+    };
+    this._cubeRaf = requestAnimationFrame(loop);
+  }
+
+  refreshCubeGates() {
+    if (!this.viewers) return;
+    this.viewers.forEach((v) => {
+      v.gated = v.inView ? getComputedStyle(v.el).visibility === 'hidden' : true;
+    });
+  }
+
+  initViewer(v) {
+    const THREE = window.THREE;
+    const el = v.el;
+    const accent = this.props.accent || '#B3782C';
+    const w = el.clientWidth || 130, h = el.clientHeight || 130;
+
+    const scene = new THREE.Scene();
+    const cam = new THREE.PerspectiveCamera(36, w / h, 0.1, 100);
+    cam.position.set(2.4, 2.0, 3.4);
+    cam.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.setSize(w, h);
+    el.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+    const key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(3, 5, 4); scene.add(key);
+    const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(-4, -2, -3); scene.add(fill);
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    // placeholder: dark machined cube with accent wireframe edges
+    const geo = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+    const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0x2b2620, metalness: 0.45, roughness: 0.5 }));
+    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: accent }));
+    group.add(mesh);
+    group.add(edges);
+
+    v.renderer = renderer; v.scene = scene; v.cam = cam; v.group = group; v.edges = edges;
+    v.initialized = true;
+
+    const place = (obj) => {
+      const box = new THREE.Box3().setFromObject(obj);
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      const s = 2.2 / Math.max(size.x, size.y, size.z);
+      obj.scale.setScalar(s);
+      obj.position.set(-center.x * s, -center.y * s, -center.z * s);
+      group.remove(mesh); group.remove(edges);
+      v.edges = null;
+      group.add(obj);
+    };
+
+    const url = el.getAttribute('data-model');
+    if (url && THREE.GLTFLoader) {
+      // parse each model file only once, then clone for every instance
+      if (this._modelCache[url]) {
+        place(this._modelCache[url].clone(true));
+      } else {
+        new THREE.GLTFLoader().load(url, (g) => {
+          this._modelCache[url] = g.scene;
+          place(g.scene.clone(true));
+        }, undefined, () => {});
+      }
+    }
+  }
+
+  componentDidUpdate() { this.applyTheme(); }
+
+  componentWillUnmount() {
+    clearTimeout(this._fail);
+    if (this._cubeRaf) cancelAnimationFrame(this._cubeRaf);
+    if (this._onCubeResize) window.removeEventListener('resize', this._onCubeResize);
+    if (this._onHash) window.removeEventListener('hashchange', this._onHash);
+    if (this._cubeIo) this._cubeIo.disconnect();
+    if (this.viewers) this.viewers.forEach((v) => { try { v.renderer.dispose(); v.renderer.forceContextLoss(); } catch (e) {} });
+    if (this._io) this._io.disconnect();
+  }
+
+  renderVals() { return { cardClick: (e) => this.cardClick(e) }; }
+}
+</script>
+</body>
+</html>
