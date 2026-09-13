@@ -1,0 +1,34 @@
+:root{
+  /* ---- Base: the press ---- */
+  --paper:         #F4EFE1; /* newsprint — page background */
+  --paper-deep:    #E9DFC8; /* aged stock — insets, panels, clippings */
+  --ink:           #16362A; /* pine ink — primary text */
+  --forest:        #2C6A4B; /* forest — headings, rules, buttons */
+  --forest-strong: #245A40; /* deep forest — links on newsprint (AA) */
+  --sage:          #6E7E6C; /* faded green — captions, hairlines */
+  --ochre:         #B3782C; /* spot color — the second ink */
+
+  /* ---- Semantic aliases ---- */
+  --surface-page:      var(--paper);
+  --surface-inset:     var(--paper-deep);
+  --surface-card:      var(--paper);
+  --surface-invert:    var(--ink);
+
+  --text-body:         var(--ink);
+  --text-heading:      var(--ink);
+  --text-display:      var(--forest);
+  --text-muted:        var(--sage);
+  --text-caption:      var(--sage);
+  --text-link:         var(--forest-strong);
+  --text-link-hover:   var(--ink);
+  --text-label:        var(--forest);
+  --text-kicker:       var(--ochre);
+  --text-on-ink:       var(--paper);
+
+  --spot:              var(--ochre);
+  --spot-ghost:        rgba(179,120,44,.32); /* off-register masthead ghost */
+
+  --rule:              rgba(22,54,42,.22);   /* hairline */
+  --rule-strong:       var(--ink);           /* heavy rule */
+  --focus-ring:        var(--forest);
+}

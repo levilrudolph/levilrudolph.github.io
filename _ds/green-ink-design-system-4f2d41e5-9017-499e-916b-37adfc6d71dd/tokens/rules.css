@@ -1,0 +1,22 @@
+:root{
+  /* Corners are square. Everywhere. A press has no rounded corners. */
+  --radius: 0;
+
+  --border-hair:  1px solid var(--rule);
+  --border-ink:   1px solid var(--rule-strong);
+  --border-heavy: 3px solid var(--rule-strong);
+  --border-btn:   1.5px solid var(--ink);
+  --border-dot:   2px dotted var(--forest);
+
+  /* No soft shadows. The only "shadow" is a hard offset block of spot ink. */
+  --shadow-press:       4px 4px 0 var(--ochre);
+  --shadow-press-alt:   4px 4px 0 var(--forest);
+  --shadow-oxford:      0 3px 0 var(--ink); /* thick-over-thin rule */
+
+  /* newsprint grain, applied as a fixed multiply overlay */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E"); /* @kind other */
+  --grain-opacity: .5; /* @kind other */
+
+  /* halftone dot screen for duotone imagery */
+  --halftone-size: 6px 6px; /* @kind other */
+}

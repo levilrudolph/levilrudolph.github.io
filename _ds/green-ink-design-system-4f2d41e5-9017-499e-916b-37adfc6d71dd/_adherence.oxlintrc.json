@@ -1,0 +1,379 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/editorial/**",
+              "components/press/**",
+              "ui_kits/portfolio/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Fraunces|Newsreader))/i]",
+        "message": "Font not provided by the design system. Available: Fraunces, Newsreader."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|as|href|disabled|onClick|style|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, as, href, disabled, onClick, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:button|a)$/]",
+        "message": "<Button> as must be one of 'button' | 'a'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Byline'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|role|style|key|ref|className|style|children)$/]",
+        "message": "<Byline> doesn't accept that prop. Declared props: name, role, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Caption'] > JSXAttribute > JSXIdentifier[name!=/^(?:style|children|key|ref|className|style|children)$/]",
+        "message": "<Caption> doesn't accept that prop. Declared props: style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Clipping'] > JSXAttribute > JSXIdentifier[name!=/^(?:over|title|jump|href|onClick|style|children|key|ref|className|style|children)$/]",
+        "message": "<Clipping> doesn't accept that prop. Declared props: over, title, jump, href, onClick, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Columns'] > JSXAttribute > JSXIdentifier[name!=/^(?:count|style|children|key|ref|className|style|children)$/]",
+        "message": "<Columns> doesn't accept that prop. Declared props: count, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Dinkus'] > JSXAttribute > JSXIdentifier[name!=/^(?:mark|style|key|ref|className|style|children)$/]",
+        "message": "<Dinkus> doesn't accept that prop. Declared props: mark, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DropCap'] > JSXAttribute > JSXIdentifier[name!=/^(?:style|children|key|ref|className|style|children)$/]",
+        "message": "<DropCap> doesn't accept that prop. Declared props: style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Folio'] > JSXAttribute > JSXIdentifier[name!=/^(?:publication|middle|right|style|key|ref|className|style|children)$/]",
+        "message": "<Folio> doesn't accept that prop. Declared props: publication, middle, right, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='InlineLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:href|style|children|key|ref|className|style|children)$/]",
+        "message": "<InlineLink> doesn't accept that prop. Declared props: href, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Kicker'] > JSXAttribute > JSXIdentifier[name!=/^(?:style|children|key|ref|className|style|children)$/]",
+        "message": "<Kicker> doesn't accept that prop. Declared props: style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Masthead'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|the|dateline|rule|style|key|ref|className|style|children)$/]",
+        "message": "<Masthead> doesn't accept that prop. Declared props: name, the, dateline, rule, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NewsPhoto'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|ratio|style|key|ref|className|style|children)$/]",
+        "message": "<NewsPhoto> doesn't accept that prop. Declared props: src, alt, ratio, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PullQuote'] > JSXAttribute > JSXIdentifier[name!=/^(?:cite|style|children|key|ref|className|style|children)$/]",
+        "message": "<PullQuote> doesn't accept that prop. Declared props: cite, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Rule'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|style|key|ref|className|style|children)$/]",
+        "message": "<Rule> doesn't accept that prop. Declared props: variant, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Rule'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:hair|heavy|oxford|dotted)$/]",
+        "message": "<Rule> variant must be one of 'hair' | 'heavy' | 'oxford' | 'dotted'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHead'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|note|children|style|key|ref|className|style|children)$/]",
+        "message": "<SectionHead> doesn't accept that prop. Declared props: label, note, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:spot|style|children|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: spot, style, children."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Byline": {
+        "replaces": []
+      },
+      "Caption": {
+        "replaces": []
+      },
+      "Clipping": {
+        "replaces": []
+      },
+      "Columns": {
+        "replaces": []
+      },
+      "Dinkus": {
+        "replaces": []
+      },
+      "DropCap": {
+        "replaces": []
+      },
+      "Folio": {
+        "replaces": []
+      },
+      "InlineLink": {
+        "replaces": []
+      },
+      "Kicker": {
+        "replaces": []
+      },
+      "Masthead": {
+        "replaces": []
+      },
+      "NewsPhoto": {
+        "replaces": []
+      },
+      "PullQuote": {
+        "replaces": []
+      },
+      "Rule": {
+        "replaces": []
+      },
+      "SectionHead": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--border-btn",
+      "--border-dot",
+      "--border-hair",
+      "--border-heavy",
+      "--border-ink",
+      "--dur-press",
+      "--ease-press",
+      "--focus-ring",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--forest",
+      "--forest-strong",
+      "--fs-body",
+      "--fs-caption",
+      "--fs-deck",
+      "--fs-display",
+      "--fs-h2",
+      "--fs-h3",
+      "--fs-headline",
+      "--fs-kicker",
+      "--fs-label",
+      "--fs-micro",
+      "--fs-nameplate",
+      "--fs-small",
+      "--fw-light",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--gap-column",
+      "--gap-grid",
+      "--grain",
+      "--grain-opacity",
+      "--halftone-size",
+      "--ink",
+      "--lh-body",
+      "--lh-deck",
+      "--lh-heading",
+      "--lh-headline",
+      "--lh-nameplate",
+      "--lh-tight",
+      "--lift",
+      "--ls-button",
+      "--ls-byline",
+      "--ls-folio",
+      "--ls-headline",
+      "--ls-kicker",
+      "--ls-label",
+      "--ls-nameplate",
+      "--ls-the",
+      "--maxw",
+      "--measure",
+      "--ochre",
+      "--pad-card",
+      "--pad-inset",
+      "--page-gutter",
+      "--paper",
+      "--paper-deep",
+      "--radius",
+      "--rule",
+      "--rule-strong",
+      "--s-1",
+      "--s-10",
+      "--s-12",
+      "--s-2",
+      "--s-3",
+      "--s-4",
+      "--s-5",
+      "--s-6",
+      "--s-8",
+      "--sage",
+      "--shadow-oxford",
+      "--shadow-press",
+      "--shadow-press-alt",
+      "--space-section",
+      "--spot",
+      "--spot-ghost",
+      "--surface-card",
+      "--surface-inset",
+      "--surface-invert",
+      "--surface-page",
+      "--text-body",
+      "--text-caption",
+      "--text-display",
+      "--text-heading",
+      "--text-kicker",
+      "--text-label",
+      "--text-link",
+      "--text-link-hover",
+      "--text-muted",
+      "--text-on-ink",
+      "--transition-press",
+      "--wonk-off",
+      "--wonk-on"
+    ],
+    "tokenKinds": {
+      "--paper": "color",
+      "--paper-deep": "color",
+      "--ink": "color",
+      "--forest": "color",
+      "--forest-strong": "color",
+      "--sage": "color",
+      "--ochre": "color",
+      "--surface-page": "color",
+      "--surface-inset": "color",
+      "--surface-card": "color",
+      "--surface-invert": "color",
+      "--text-body": "font",
+      "--text-heading": "font",
+      "--text-display": "font",
+      "--text-muted": "font",
+      "--text-caption": "font",
+      "--text-link": "font",
+      "--text-link-hover": "font",
+      "--text-label": "font",
+      "--text-kicker": "font",
+      "--text-on-ink": "font",
+      "--spot": "color",
+      "--spot-ghost": "color",
+      "--rule": "color",
+      "--rule-strong": "color",
+      "--focus-ring": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-mono": "font",
+      "--fw-light": "other",
+      "--fw-regular": "other",
+      "--fw-medium": "other",
+      "--fw-semibold": "other",
+      "--fs-nameplate": "font",
+      "--fs-headline": "font",
+      "--fs-display": "font",
+      "--fs-h2": "font",
+      "--fs-h3": "font",
+      "--fs-deck": "font",
+      "--fs-body": "font",
+      "--fs-small": "font",
+      "--fs-caption": "font",
+      "--fs-label": "font",
+      "--fs-kicker": "font",
+      "--fs-micro": "font",
+      "--lh-nameplate": "other",
+      "--lh-headline": "other",
+      "--lh-heading": "other",
+      "--lh-deck": "other",
+      "--lh-body": "other",
+      "--lh-tight": "other",
+      "--ls-nameplate": "other",
+      "--ls-headline": "other",
+      "--ls-label": "other",
+      "--ls-kicker": "other",
+      "--ls-folio": "other",
+      "--ls-byline": "other",
+      "--ls-button": "other",
+      "--ls-the": "other",
+      "--wonk-on": "other",
+      "--wonk-off": "other",
+      "--measure": "spacing",
+      "--maxw": "spacing",
+      "--s-1": "spacing",
+      "--s-2": "spacing",
+      "--s-3": "spacing",
+      "--s-4": "spacing",
+      "--s-5": "spacing",
+      "--s-6": "spacing",
+      "--s-8": "spacing",
+      "--s-10": "spacing",
+      "--s-12": "spacing",
+      "--gap-grid": "spacing",
+      "--gap-column": "spacing",
+      "--pad-card": "spacing",
+      "--pad-inset": "spacing",
+      "--space-section": "spacing",
+      "--page-gutter": "spacing",
+      "--radius": "radius",
+      "--border-hair": "color",
+      "--border-ink": "color",
+      "--border-heavy": "color",
+      "--border-btn": "color",
+      "--border-dot": "color",
+      "--shadow-press": "shadow",
+      "--shadow-press-alt": "shadow",
+      "--shadow-oxford": "shadow",
+      "--grain": "other",
+      "--grain-opacity": "other",
+      "--halftone-size": "other",
+      "--dur-press": "other",
+      "--ease-press": "other",
+      "--transition-press": "other",
+      "--lift": "other"
+    },
+    "fontFamilies": [
+      "Fraunces",
+      "Newsreader"
+    ]
+  }
+}

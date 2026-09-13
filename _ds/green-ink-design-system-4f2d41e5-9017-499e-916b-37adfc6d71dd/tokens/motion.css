@@ -1,0 +1,10 @@
+:root{
+  --dur-press: .12s; /* @kind other */
+  --ease-press: ease; /* @kind other */
+  --transition-press: transform var(--dur-press) var(--ease-press), box-shadow var(--dur-press) var(--ease-press), background var(--dur-press) var(--ease-press); /* @kind other */
+  --lift: translate(-2px, -2px); /* @kind other */ /* buttons lift toward the reader on hover */
+}
+@media (prefers-reduced-motion: reduce){
+  :root{ --transition-press: none; /* @kind other */
+         --lift: none; /* @kind other */ }
+}

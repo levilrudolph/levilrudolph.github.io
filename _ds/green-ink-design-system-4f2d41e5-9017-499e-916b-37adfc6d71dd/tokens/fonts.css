@@ -1,0 +1,3 @@
+/* Green Ink ships two variable serifs, both from Google Fonts — the same
+   source the original spec used. No local binaries; consumers get the CDN. */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap");
