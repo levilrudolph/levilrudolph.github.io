@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attend. · Levi Rudolph</title>
+<meta name="description" content="Mass meeting scheduler on custom graph algorithms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<div class="ev-layout">
+
+
+
+
+
+
+
+<aside class="ev-side">
+  <p class="ev-small"><a class="ev-link" href="/">Levi Rudolph</a> <span class="ev-muted">/ Projects</span></p>
+  <div class="ev-stack">
+    <p class="ev-label" style="margin:0">Project 02</p>
+    <h1 class="ev-dtitle">Attend.</h1>
+    <p class="ev-headline">Mass meeting scheduler on custom graph algorithms.</p>
+  </div>
+  
+  <div>
+    <h2 class="ev-label">Info</h2>
+    <dl class="ev-info">
+      <dt>Role</dt><dd>Founder</dd>
+      <dt>Year</dt><dd>2026</dd>
+      <dt>Status</dt><dd>In pilot</dd>
+      <dt>Domain</dt><dd>Graph theory</dd>
+      
+    </dl>
+  </div>
+  
+  
+  <div>
+    <h2 class="ev-label">Tools</h2>
+    <div class="ev-tags"><span class="ev-tag">Python</span><span class="ev-tag">Graph theory</span><span class="ev-tag">FastAPI</span><span class="ev-tag">PostgreSQL</span><span class="ev-tag">Azure</span><span class="ev-tag">Microsoft Graph API</span><span class="ev-tag">Microsoft Entra</span></div>
+  </div>
+  
+  <p class="ev-small">Next: <a class="ev-link" href="/projects/buckys-blast-off/">Bucky's Blast Off</a></p>
+</aside>
+
+<main class="ev-main ev-detail">
+  <img class="ev-cover is-contain" src="/images/attend-screenshot.png" alt="Attend. product screenshot">
+
+  <section class="ev-prose">
+    <p>A B2B Outlook add-in that plugs into Microsoft 365 and schedules mass meetings automatically, on a graph-theory optimizer I designed.</p>
+<p>Attend is a startup I founded, funded, designed, and built myself. It came out of a year of professional engineering management work, where I watched a huge amount of time disappear into meetings: meetings that ran too long for what they accomplished, meetings too short to matter, meetings with the wrong people in the room, and, worst of all, the endless back-and-forth of just getting them scheduled. Coordinating a large meeting today means manually juggling everyone's availability, priority, and room constraints by hand, and no existing product actually solves that. They schedule what you tell them to. None of them find the optimal time and routing on their own.</p>
+  </section>
+
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">How it works</h2>
+    <p>So I built the thing that should exist. At its core is a graph-theory-based optimizer I designed: it first guarantees every required attendee can actually make it, then maximizes how many optional attendees can join, then optimizes room selection by capacity and travel distance. It pulls live availability through the Microsoft Graph API, intersects everyone's free time, and returns the genuinely best slot rather than the first one that technically works.</p>
+  </section>
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">Built solo</h2>
+    <p>The part I am most proud of is that I built all of it solo, and most of it was territory I had never touched. Going in, I knew basic Python and nothing else. To ship this I taught myself graph theory to build the optimizer, and the entire Azure hosting and backend world to run it: an async FastAPI backend, a multi-tenant PostgreSQL database with proper tenant isolation, secure Microsoft Entra authentication, and cloud hosting and storage. I funded the whole thing out of my own student accounts.</p>
+  </section>
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">Status</h2>
+    <p>Attend is in pilot use now. More than the product itself, it is the clearest evidence of how I work: I find a real problem, I decide it is worth solving, and I go learn whatever I have to in order to solve it well.</p>
+  </section>
+  
+
+  
+</main>
+
+</div>
+</body>
+</html>

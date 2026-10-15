@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 DOF Robotic Arm Attraction Model · Levi Rudolph</title>
+<meta name="description" content="A fully custom arm, down to the actuator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<div class="ev-layout">
+
+
+
+
+
+
+
+<aside class="ev-side">
+  <p class="ev-small"><a class="ev-link" href="/">Levi Rudolph</a> <span class="ev-muted">/ Projects</span></p>
+  <div class="ev-stack">
+    <p class="ev-label" style="margin:0">Project 01</p>
+    <h1 class="ev-dtitle">5 DOF Robotic Arm Attraction Model</h1>
+    <p class="ev-headline">A fully custom arm, down to the actuator.</p>
+  </div>
+  
+  <div>
+    <h2 class="ev-label">Info</h2>
+    <dl class="ev-info">
+      <dt>Role</dt><dd>Solo: design, analysis, build</dd>
+      <dt>Year</dt><dd>2026</dd>
+      <dt>Status</dt><dd>In fabrication</dd>
+      
+    </dl>
+  </div>
+  
+  
+  <div>
+    <h2 class="ev-label">Tools</h2>
+    <div class="ev-tags"><span class="ev-tag">SolidWorks</span><span class="ev-tag">Cycloidal drive</span><span class="ev-tag">FEA</span><span class="ev-tag">Inverse kinematics</span><span class="ev-tag">ESP32</span><span class="ev-tag">TMC2209</span></div>
+  </div>
+  
+  <p class="ev-small">Next: <a class="ev-link" href="/projects/attend/">Attend.</a></p>
+</aside>
+
+<main class="ev-main ev-detail">
+  <img class="ev-cover" src="/images/5dof-in-development.png" alt="5 DOF robotic arm CAD model, marked In Development by Levi Rudolph">
+
+  <section class="ev-prose">
+    <p>A solo-designed, desktop-scale working model of a “KUKA coaster”: the robotic-arm attraction type where a passenger capsule rides the end of a multi-axis industrial arm through a programmed motion profile. The scale patron is a 6″ Bucky Badger figure seated in a fully ASTM F2291 Class-4 compliant restraint, and the platform is modular, so one arm can run different ride profiles rather than being locked to a single motion.</p>
+  </section>
+
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">The drivetrain</h2>
+    <p>The arm has five joints, giving it five degrees of freedom, one rotational axis per joint. Every joint is driven through a cycloidal reduction I designed from scratch: a 20:1 stage with 21 fixed ring pins acting against a 20-lobe disc, run as a dual-disc pair set 180° apart so the eccentric masses balance each other. I generated the disc profile mathematically and imported it into SolidWorks equation driven curves, then packaged it around a 2.43″ pitch circle with 0.04″ of eccentricity. I chose cycloidal over harmonic drives for the two reasons that matter on a ride: near-zero backlash for repeatable motion, and tolerance for the shock loads a start-stop ride profile throws at the joints.</p>
+  </section>
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">Actuation and control</h2>
+    <p>Actuation is a NEMA 17 stepper per joint driven by TMC2209 drivers, with motor current set in software over UART rather than by trimpot, all coordinated by an ESP32. A GT2 timing-belt stage sits between each motor and its cycloidal input, which offsets the motor axis for tighter packaging and leaves room to add reduction if a profile needs it.</p>
+  </section>
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">The restraint</h2>
+    <p>Because the ride profile I targeted put the model in Class-4 territory, the restraint had to meet that bar in full. I designed a dual-redundant, ratcheting over-the-shoulder lap bar that is compliant both mechanically and electrically, so a single failure in either domain does not release the patron. The ride program won't start a cycle unless the restraints are locked.</p>
+  </section>
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">The analysis</h2>
+    <p>The design is backed by real analysis, not just CAD: torque and load calculations at the joints, inverse kinematics for the arm, FEA on the loaded members, and a full dynamic-systems analysis of the ride arm through its motion.</p>
+  </section>
+  
+  <section class="ev-sec ev-prose">
+    <h2 class="ev-label">Status</h2>
+    <p>Full CAD assembly is complete, the cycloidal drive is built, and the arm segments are in fabrication now.</p>
+  </section>
+  
+
+  
+  <section class="ev-sec">
+    <h2 class="ev-label">Gallery</h2>
+    <div class="ev-gallery">
+      
+      <figure class="ev-fig">
+        <img class="" src="/images/5dof-bench-test.gif" alt="Ride arm running a motion profile on the bench" loading="lazy">
+        <figcaption>Cycloidal drive running a motion profile on the bench</figcaption>
+      </figure>
+      
+      <figure class="ev-fig">
+        <img class="" src="/images/5dof-cycloidal-disc.jpg" alt="3D-printed cycloidal drive, ring pins and dual-disc pair" loading="lazy">
+        <figcaption>3D-printed cycloidal drive, ring pins and dual-disc pair</figcaption>
+      </figure>
+      
+      <figure class="ev-fig">
+        <img class="" src="/images/5dof-motor-test.jpg" alt="Cycloidal joint driven by a NEMA 17 stepper on the test bench" loading="lazy">
+        <figcaption>Cycloidal joint driven by a NEMA 17 stepper on the test bench</figcaption>
+      </figure>
+      
+      <figure class="ev-fig">
+        <img class="" src="/images/5dof-prototype.gif" alt="Printed arm prototype moving on the bench" loading="lazy">
+        <figcaption>Printed arm prototype moving on the bench</figcaption>
+      </figure>
+      
+      <figure class="ev-fig">
+        <img class="" src="/images/5dof-bench-setup.jpg" alt="Arm prototype wired to stepper drivers on a breadboard for bench testing" loading="lazy">
+        <figcaption>Bench test setup: stepper drivers on a breadboard</figcaption>
+      </figure>
+      
+    </div>
+  </section>
+  
+</main>
+
+</div>
+</body>
+</html>
