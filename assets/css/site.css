@@ -22,6 +22,7 @@ a{color:var(--green)}a:hover{color:var(--green-strong)}
 
 /* Type */
 .ev-label{font-family:var(--mono);font-size:11px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 12px}
+.ev-section-title{font-family:var(--serif);font-size:30px;line-height:36px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin:0 0 24px}
 .ev-meta{font-family:var(--mono);font-size:13px;line-height:18px;color:var(--ink-muted);margin:8px 0 12px}
 .ev-ptitle{font-family:var(--serif);font-size:22px;line-height:28px;font-weight:500;margin:0;color:var(--ink)}
 .ev-ptitle a{color:inherit;text-decoration:none}
@@ -75,11 +76,12 @@ a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 .ev-cover{width:100%;max-height:560px;object-fit:cover;border-radius:4px;display:block;background:var(--surface-sunk)}
 .ev-cover.is-contain{object-fit:contain;max-height:600px}
 .ev-cover.is-model{aspect-ratio:1/1;max-height:480px;object-fit:contain}
+.ev-cover.is-video{aspect-ratio:16/9;max-height:none;object-fit:cover;background:#000}
 .ev-cover.is-logo{object-fit:contain;height:380px;padding:40px}
 .ev-sec{border-top:1px solid var(--line);padding-top:24px}
 .ev-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .ev-fig{margin:0;display:flex;flex-direction:column;gap:8px}
-.ev-fig img,.ev-ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--surface-sunk);border-radius:4px}
+.ev-fig img,.ev-fig video,.ev-ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--surface-sunk);border-radius:4px}
 .ev-fig img.ev-contain{object-fit:contain;background:var(--surface-raised);border:1px solid var(--line)}
 .ev-fig figcaption{font-family:var(--mono);font-size:13px;line-height:18px;color:var(--ink-muted)}
 
@@ -102,4 +104,5 @@ a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
   .ev-thumb{width:72px;height:72px}
   .ev-thumb.ev-contain{padding:8px}
   .ev-gallery{grid-template-columns:minmax(0,1fr)}
+  .ev-section-title{font-size:26px;line-height:32px;margin-bottom:20px}
 }
